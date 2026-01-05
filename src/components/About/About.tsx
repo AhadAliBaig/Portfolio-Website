@@ -1,5 +1,6 @@
 import './About.css'
 import { useState } from 'react'
+import GradientText from '../GradientText'
 import { 
   SiPython,
   SiJavascript,
@@ -10,10 +11,9 @@ import {
   SiReact,
   SiAngular,
   SiExpress,
-  SiGraphql,
   SiGithub,
   SiJira,
-  SiGit
+  
 } from 'react-icons/si'
 import { FaJava, FaAws, FaMicrosoft } from 'react-icons/fa'
 
@@ -25,10 +25,16 @@ function About() {
       <h2 className='section-title'>About Me</h2>
         <div className='about-content'>
           <div className="about-code-block">
-           <p>
-              UNBC Computer Science student with hands-on experience shipping full-stack and ML-powered features across Angular/React, Node.js, Python, and SQL, from API design to cloud deployment.
-              Built end-to-end web applications, credit card fraud detection models, and sensor-driven HRI coaching systems that deliver real-time feedback and measurable improvements in user outcomes.
-              Comfortable owning features in modern web stacks, integrating third-party APIs and relational databases, and collaborating asynchronously in remote/hybrid teams with clear documentation, code reviews, and automated checks.
+          <p>
+            <GradientText 
+              colors={["#ef4444", "#ff6b6b", "#ffffff", "#ff6b6b", "#ef4444"]}
+              animationSpeed={8}
+              direction="horizontal"
+            >
+              I'm a Computer Science student at UNBC who loves building full stack applications and machine learning models. 
+              I'm particularly interested in backend development and DevOps, and I enjoy the entire process from designing APIs 
+              to deploying to the cloud. I'm always excited to learn new technologies and solve real problems with code.
+            </GradientText>
           </p>
         </div>
       </div>

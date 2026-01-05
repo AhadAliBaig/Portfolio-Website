@@ -260,3 +260,8 @@
   line-height: 1.8;
   font-size: 1.125rem;
 }
+
+/* Ensure GradientText displays properly */
+.about-code-block p > * {
+  display: inline;
+}

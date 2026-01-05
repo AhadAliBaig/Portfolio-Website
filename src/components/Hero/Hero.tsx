@@ -1,17 +1,27 @@
 import "./Hero.css";
+import TextType from '../TextType';
 
 function Hero() {
   return (
     <section id="hero" className="hero-section">
       <div className="hero-content">
         <h1 className="hero-title">
-          <span className="gradient-text">Hello, I'm </span>
+          <TextType 
+              text={[
+                "Welcome to my portfolio",
+                "My name is Ahad Baig",
+                "I am an aspiring Software Engineer"
+              ]}
+            as="span"
+            
+            typingSpeed={100}
+            showCursor={true}
+            cursorCharacter="|"
+          />
         </h1>
         <p className="hero-description">
-          Hi, I’m Ahad. I build software that’s straightforward to use and solid
-          behind the scenes. I’m especially interested in backend development,
-          and I enjoy owning the whole thing from code to server, so I can make
-          it fast, secure, and dependable.
+           I'm a 4th Year Computer Science student passionate about building 
+          software that solves real problems. Take a look around to see what I've been working on.
         </p>
         <p className="hero-description-1">
           Fun fact: I host this portfolio on an Oracle Cloud server I configured
@@ -19,7 +29,7 @@ function Hero() {
         </p>
         <button
           className="resume-button"
-          onClick={() => window.open("Resume.pdf", "_blank")}
+          onClick={() => window.open("/Resume.pdf", "_blank")}
         >
           View Resume
         </button>
