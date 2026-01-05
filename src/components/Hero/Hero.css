@@ -1,10 +1,11 @@
 .hero-section {
-  min-height: 100vh;
+  min-height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 2rem;
-  padding-top: 1rem; /* Add this - space for fixed header */
+  padding-top: 6rem;
+  padding-bottom: 0; /* Remove bottom padding completely */
   scroll-snap-align: start;
 }
   
