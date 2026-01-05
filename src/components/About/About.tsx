@@ -27,7 +27,7 @@ function About() {
           <div className="about-code-block">
           <p>
             <GradientText 
-              colors={["#ef4444", "#ff6b6b", "#ffffff", "#ff6b6b", "#ef4444"]}
+              colors={["#ffffff", "#e5e5e5", "#ffffff", "#e5e5e5", "#ffffff"]}
               animationSpeed={8}
               direction="horizontal"
             >

@@ -27,8 +27,8 @@
 
 .project-card {
   background: #0d0d0d;
-  border: 1px solid rgba(239, 68, 68, 0.3);
-  border-left: 3px solid #ef4444;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-left: 3px solid rgba(255, 255, 255, 0.8);
   border-radius: 4px;
   overflow: hidden;
   transition: transform 0.3s, border-color 0.3s;
@@ -40,7 +40,7 @@
 
 .project-card-link:hover .project-card {
   transform: translateY(-4px);
-  border-color: rgba(239, 68, 68, 0.6);
+  border-color: rgba(255, 255, 255, 0.6);
 }
 
 .project-thumbnail {
@@ -50,7 +50,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-bottom: 1px solid rgba(239, 68, 68, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   position: relative;
   overflow: hidden;
 }
@@ -68,7 +68,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(239, 68, 68, 0.05);
+  background: rgba(255, 255, 255, 0.05);
   position: absolute;
   top: 0;
   left: 0;
@@ -89,7 +89,7 @@
 }
 
 .project-title {
-  color: #ef4444;
+  color: white;
   font-size: 1.25rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
