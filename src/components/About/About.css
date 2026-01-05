@@ -65,10 +65,7 @@
 }
 
 .content h3 {
-  background: linear-gradient(135deg, #ef4444 0%, #ff6b6b 50%, #5227FF 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #ef4444;
   font-size: 1.5rem;
   margin-top: 2rem;
   margin-bottom: 1rem;
@@ -86,40 +83,33 @@
 }
 
 .skill-category {
-  background: rgba(13, 13, 13, 0.6);
-  background: linear-gradient(135deg, rgba(239, 68, 68, 0.08) 0%, rgba(82, 39, 255, 0.08) 100%);
+  background: #0d0d0d;
   padding: 1.5rem;
-  border-radius: 8px;
-  border: 1px solid rgba(239, 68, 68, 0.2);
-  transition: transform 0.3s, border-color 0.3s, background 0.3s;
+  border-radius: 4px;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-left: 3px solid #ef4444;
+  transition: transform 0.3s, border-color 0.3s;
 }
 
 .skill-category:nth-child(1) {
-  border-left: 3px solid rgba(239, 68, 68, 0.6);
-  padding-left: 1.8rem;
+  border-left: 3px solid rgba(239, 68, 68, 0.8);
 }
 
 .skill-category:nth-child(2) {
-  border-top: 2px solid rgba(82, 39, 255, 0.4);
-  padding-top: 1.8rem;
+  border-left: 3px solid rgba(82, 39, 255, 0.8);
 }
 
 .skill-category:nth-child(3) {
-  border-right: 3px solid rgba(255, 107, 107, 0.5);
-  padding-right: 1.7rem;
+  border-left: 3px solid rgba(255, 107, 107, 0.8);
 }
 
 .skill-category:hover {
   transform: translateY(-2px);
-  border-color: rgba(239, 68, 68, 0.4);
-  background: linear-gradient(135deg, rgba(239, 68, 68, 0.12) 0%, rgba(82, 39, 255, 0.12) 100%);
+  border-color: rgba(239, 68, 68, 0.6);
 }
 
 .skill-category h3 {
-  background: linear-gradient(135deg, #ef4444 0%, #ff6b6b 50%, #5227FF 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #ef4444;
   font-size: 1.2rem;
   margin-top: 0;
   margin-bottom: 1rem;
@@ -170,6 +160,11 @@
 
 .education-entry {
   margin-top: 1rem;
+  background: #0d0d0d;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-left: 3px solid #ef4444;
+  border-radius: 4px;
+  padding: 1.5rem;
 }
 
 .education-header {
@@ -187,9 +182,7 @@
 
 .education-title h3 {
   margin: 0;
-  background: none;
-  -webkit-text-fill-color: white;
-  color: white;
+  color: #ef4444;
   font-size: 1.25rem;
   font-weight: bold;
 }
@@ -210,13 +203,13 @@
 }
 
 .degree {
-  margin-left: 1rem;
+  margin-left: 0;
   margin-bottom: 0.5rem;
   color: white;
 }
 
 .courses {
-  margin-left: 1rem;
+  margin-left: 0;
   color: white;
 }
 
@@ -240,10 +233,10 @@
 }
 
 .about-code-block {
-  background: linear-gradient(135deg, rgba(239, 68, 68, 0.08) 0%, rgba(82, 39, 255, 0.08) 100%);
-  border: 1px solid rgba(239, 68, 68, 0.25);
+  background: #0d0d0d;
+  border: 1px solid rgba(239, 68, 68, 0.3);
   border-left: 3px solid #ef4444;
-  border-radius: 8px;
+  border-radius: 4px;
   padding: 1.5rem;
   margin-bottom: 3rem;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -251,25 +244,19 @@
 }
 
 .about-code-block::before {
-  content: '```';
+  content: '> ';
   position: absolute;
-  top: 0.5rem;
-  right: 1rem;
-  color: rgba(239, 68, 68, 0.3);
-  font-size: 1.5rem;
+  top: 1.5rem;
+  left: 1rem;
+  color: rgba(239, 68, 68, 0.6);
+  font-size: 1rem;
   font-weight: bold;
 }
 
 .about-code-block p {
   margin: 0;
-  color: white;
+  margin-left: 1.5rem;
+  color: rgba(255, 255, 255, 0.9);
   line-height: 1.8;
   font-size: 1.125rem;
 }
-
-.about-code-block p {
-  margin: 0;
-  color: white;
-  line-height: 1.8;
-  font-size: 1.125rem;
-  }

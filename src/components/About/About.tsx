@@ -85,7 +85,7 @@ function About() {
                 <li><FaAws className="skill-icon" /> AWS <span className="skill-note">(deployment)</span></li>
                 <li><span className="skill-text">CI/CD pipelines</span> <span className="skill-note">(GitHub Actions)</span></li>
                 <li><span className="skill-text">Integration Testing</span></li>
-                <li>SiGit className=skill-icon </li>
+                
                 <li><SiGithub className="skill-icon" /> GitHub</li>
                 <li><SiJira className="skill-icon" /> JIRA</li>
               </ul>
