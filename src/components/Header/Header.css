@@ -4,10 +4,9 @@ header {
   left: 0;
   right: 17px;
   z-index: 1000;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(13, 13, 13, 0.98);
   backdrop-filter: blur(10px);
 }
-
 .header-nav {
   display: flex;
   justify-content: space-between;

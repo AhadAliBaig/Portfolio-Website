@@ -20,7 +20,7 @@ function Projects() {
     },
     {
       title: 'EmotAI',
-      tech: 'Django, Python, JavaScript, HTML, CSS',
+      
       description: 'Emotion detection application using face detection to identify emotions, specially configured for people with special needs. Features real-time feedback, interactive tutorials, and personalized guidance.',
       
       github: 'https://github.com/AhadAliBaig/EmotAI',
@@ -68,7 +68,7 @@ function Projects() {
               </div>
               <div className="project-content">
                 <h3 className="project-title">{project.title}</h3>
-                <p className="project-tech">{project.tech}</p>
+                
                 <p className="project-description">{project.description}</p>
                 <p className="project-period">{project.period}</p>
               </div>
