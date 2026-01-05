@@ -16,7 +16,7 @@ function Projects() {
       description: 'Machine learning pipeline for detecting fraudulent transactions using imbalanced dataset techniques. Achieved F1 score of 0.79 with optimized recall and false positive rates.',
       
       github: 'https://github.com/AhadAliBaig/Credit-Card-Fraud-Detection',
-      image: '/images/fraud-detection.png'
+      image: '/images/creditcardfruaddetection.png'
     },
     {
       title: 'EmotAI',
