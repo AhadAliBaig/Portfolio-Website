@@ -1,7 +1,7 @@
 .about-section {
   min-height: 100vh;
-  padding: 1rem 4rem 2rem; /* More horizontal padding */
-  max-width: 1200px; /* Increased from 900px */
+  padding: 1rem 4rem 2rem;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -10,7 +10,7 @@
   font-weight: bold;
   color: white;
   margin-bottom: 2rem;
-  text-align: center; /* Changed from center */
+  text-align: center;
 }
 
 .about-content {
@@ -34,7 +34,7 @@
 
 .tab {
   background: transparent;
-  border: 2px solid rgba(255, 255, 255, 0.3);
+  border: 2px solid rgba(255, 159, 252, 0.3);
   color: white;
   padding: 0.75rem 2rem;
   font-size: 1rem;
@@ -44,13 +44,13 @@
 }
 
 .tab:hover {
-  border-color: rgba(255, 255, 255, 0.6);
+  border-color: rgba(255, 159, 252, 0.6);
 }
 
 .tab.active {
-  border-color: #ef4444;
-  background: rgba(239, 68, 68, 0.1);
-  color: #ef4444;
+  border-color: #5227FF;
+  background: rgba(82, 39, 255, 0.15);
+  color: #FF9FFC;
 }
 
 .tab-content {
@@ -64,7 +64,7 @@
 }
 
 .content h3 {
-  background: linear-gradient(135deg, #ef4444 0%, #f97316 100%);
+  background: linear-gradient(135deg, #5227FF 0%, #FF9FFC 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -85,38 +85,56 @@
 }
 
 .skill-category {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(82, 39, 255, 0.08);
   padding: 1.5rem;
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 159, 252, 0.2);
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+.skill-category:nth-child(1) {
+  border-left: 3px solid rgba(82, 39, 255, 0.6);
+  padding-left: 1.8rem;
+}
+
+.skill-category:nth-child(2) {
+  border-top: 2px solid rgba(255, 159, 252, 0.4);
+  padding-top: 1.8rem;
+}
+
+.skill-category:nth-child(3) {
+  border-right: 3px solid rgba(177, 158, 239, 0.5);
+  padding-right: 1.7rem;
+}
+
+.skill-category:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 159, 252, 0.4);
+  background: rgba(82, 39, 255, 0.12);
 }
 
 .skill-category h3 {
-  background: linear-gradient(135deg, #ef4444 0%, #f97316 100%);
+  background: linear-gradient(135deg, #5227FF 0%, #FF9FFC 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  font-size: 1.3rem; /* Reduced from 1.5rem */
+  font-size: 1.2rem;
   margin-top: 0;
   margin-bottom: 1rem;
   text-align: center;
-  white-space: nowrap; /* Prevents wrapping */
-  overflow: hidden;
-  text-overflow: ellipsis; /* Adds ... if too long */
-}
-
-.skill-category ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+  white-space: nowrap;
 }
 
 .skill-category ul li {
-  padding: 0.75rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.7rem 0;
+  border-bottom: 1px solid rgba(255, 159, 252, 0.15);
   display: flex;
   align-items: center;
   gap: 0.75rem;
+}
+
+.skill-category:nth-child(2) ul li {
+  padding: 0.8rem 0;
 }
 
 .skill-category ul li:last-child {
@@ -200,10 +218,9 @@
 }
 
 .courses strong {
-  color: #ef4444;
+  color: #FF9FFC;
 }
 
-/* Responsive - stack on mobile */
 @media (max-width: 768px) {
   .skills-grid {
     grid-template-columns: 1fr;
@@ -220,13 +237,13 @@
 }
 
 .about-code-block {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-left: 3px solid #ef4444;
+  background: rgba(82, 39, 255, 0.08);
+  border: 1px solid rgba(255, 159, 252, 0.2);
+  border-left: 3px solid #5227FF;
   border-radius: 8px;
   padding: 1.5rem;
   margin-bottom: 3rem;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; /* Changed from monospace */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   position: relative;
 }
 
@@ -235,7 +252,7 @@
   position: absolute;
   top: 0.5rem;
   right: 1rem;
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 159, 252, 0.3);
   font-size: 1.5rem;
   font-weight: bold;
 }
@@ -244,5 +261,5 @@
   margin: 0;
   color: white;
   line-height: 1.8;
-  font-size: 1.125rem; /* Ensure readable size */
+  font-size: 1.125rem;
 }
