@@ -6,29 +6,33 @@ function Projects() {
       title: 'Jobtrackr',
       
       description: 'Full-stack job tracking platform with AI-powered resume matching and automated cover letter generation. Replaces spreadsheet tracking with a centralized dashboard.',
-      
-      github: 'https://github.com/ZohaibRahim/CPSC300_GroupProject'
+     
+      github: 'https://github.com/ZohaibRahim/CPSC300_GroupProject',
+      image: '/images/jobtrackr.png'
     },
     {
       title: 'Credit Card Fraud Detection',
       
       description: 'Machine learning pipeline for detecting fraudulent transactions using imbalanced dataset techniques. Achieved F1 score of 0.79 with optimized recall and false positive rates.',
       
-      github: 'https://github.com/AhadAliBaig/Credit-Card-Fraud-Detection'
+      github: 'https://github.com/AhadAliBaig/Credit-Card-Fraud-Detection',
+      image: '/images/fraud-detection.png'
     },
     {
       title: 'EmotAI',
-      
+      tech: 'Django, Python, JavaScript, HTML, CSS',
       description: 'Emotion detection application using face detection to identify emotions, specially configured for people with special needs. Features real-time feedback, interactive tutorials, and personalized guidance.',
       
-      github: 'https://github.com/AhadAliBaig/EmotAI'
+      github: 'https://github.com/AhadAliBaig/EmotAI',
+      image: '/images/emotai.png'
     },
     {
       title: 'Study Buddy',
       
       description: 'Overall scheduler and study management application to help students organize their coursework, track assignments, and manage study schedules efficiently.',
-      
-      github: 'https://github.com/AhadAliBaig/study-buddy'
+      period: 'ONLY FRONTEND IS HOSTED, SUBSCRIPTION FOR BACKEND HAS EXPIRED',
+      github: 'https://study-buddy-unbc.netlify.app/calendar',
+      image: '/images/studybuddy.png'
     }
   ]
 
@@ -47,7 +51,18 @@ function Projects() {
           >
             <div className="project-card">
               <div className="project-thumbnail">
-                <div className="project-placeholder">
+                <img 
+                  src={project.image} 
+                  alt={project.title}
+                  className="project-image"
+                  onError={(e) => {
+                    // Fallback to placeholder if image fails to load
+                    e.currentTarget.style.display = 'none';
+                    const placeholder = e.currentTarget.parentElement?.querySelector('.project-placeholder');
+                    if (placeholder) placeholder.classList.remove('hidden');
+                  }}
+                />
+                <div className="project-placeholder hidden">
                   <span className="project-icon">📁</span>
                 </div>
               </div>

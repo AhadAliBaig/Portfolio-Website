@@ -4,7 +4,9 @@ function Header() {
   return (
     <header>
       <nav className="header-nav">
-        <div className="logo">Ahad</div>
+        <div className="logo">
+          <img src="/images/Submark.png" alt="Ahad" className="logo-image" />
+        </div>
         <div className="nav-links">
           <a href="#about">About</a>
           <a href="#projects">Projects</a>

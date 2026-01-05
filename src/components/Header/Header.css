@@ -2,7 +2,7 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  right: 17px; /* Leave space for scrollbar */
+  right: 17px;
   z-index: 1000;
   background-color: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(10px);
@@ -39,8 +39,24 @@ header {
   font-weight: bold;
   color: white;
   transition: color 0.3s;
+  display: flex;
+  align-items: center;
+  height: 2rem;
+}
+
+.logo-image {
+  height: 3rem;
+  max-height: 3rem;
+  width: auto;
+  max-width: 150px;
+  display: block;
+  object-fit: contain;
 }
 
 .logo:hover {
   color: #f75555;
+}
+
+.logo:hover .logo-image {
+  opacity: 0.8;
 }
