@@ -1,0 +1,84 @@
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  padding-top: 1rem; /* Add this - space for fixed header */
+  scroll-snap-align: start;
+}
+  
+  .hero-content {
+    max-width: 800px;
+    text-align: left;
+  }
+  
+  .hero-title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+  }
+  
+  .gradient-text {
+    background: linear-gradient(135deg, #d40606 0%, #0b00a8 100%);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradient-shift 3s ease infinite;
+  }
+  
+  @keyframes gradient-shift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+
+  .hero-description {
+    font-size: 1.25rem;
+    color: white;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+  }
+  
+    
+  .hero-description-1 {
+    font-size: 1.25rem;
+    color: white;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    font-weight: bold;
+    font-style: italic;
+    padding-left: 1rem;
+    border-left: 3px solid #a855f7;
+    margin-top: 1rem;
+  }
+  
+  .resume-button {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-radius: 4px;
+    margin: 0 auto;
+    display: block;
+  }
+  
+  .resume-button:hover {
+    background: white;
+    color: black;
+  }

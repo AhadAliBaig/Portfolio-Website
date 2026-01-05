@@ -1,0 +1,58 @@
+.about-section {
+    min-height: 100vh;
+    padding: 6rem 2rem 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+    
+  }
+  
+  .section-title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  .tabs {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+  }
+  
+  .tab {
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-radius: 4px;
+  }
+  
+  .tab:hover {
+    border-color: rgba(255, 255, 255, 0.6);
+  }
+  
+  .tab.active {
+    border-color: #a855f7;
+    background: rgba(168, 85, 247, 0.1);
+    color: #a855f7;
+  }
+  
+  .tab-content {
+    min-height: 300px;
+  }
+  
+  .content {
+    color: white;
+    font-size: 1.125rem;
+    line-height: 1.8;
+  }
+  
+  .content p {
+    margin-bottom: 1rem;
+  }
