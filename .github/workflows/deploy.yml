@@ -1,0 +1,26 @@
+name: Deploy to Oracle Cloud Infrastructure
+
+on:
+    workflow_dispatch:
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+            
+            - name: Set up Node.js
+              uses: actions/setup-node@v4
+              with:
+                node-version: 22
+
+            - name: Install dependencies
+              run: npm install
+
+            - name: Build the application
+              run: npm run build
+
+            - name: Deploy to Oracle Cloud Infrastructure
+              run: echo "Deploying to Oracle Cloud Infrastructure"
+
