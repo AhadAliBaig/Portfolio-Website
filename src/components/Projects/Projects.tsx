@@ -7,7 +7,7 @@ function Projects() {
       
       description: 'Full-stack job tracking platform with AI-powered resume matching and automated cover letter generation. Replaces spreadsheet tracking with a centralized dashboard.',
      
-      github: 'https://github.com/ZohaibRahim/CPSC300_GroupProject',
+      github: 'https://jobtrackkr.netlify.app/login',
       image: '/images/jobtrackr.png'
     },
     {
@@ -33,7 +33,16 @@ function Projects() {
       period: 'ONLY FRONTEND IS HOSTED, SUBSCRIPTION FOR BACKEND HAS EXPIRED',
       github: 'https://study-buddy-unbc.netlify.app/calendar',
       image: '/images/studybuddy.png'
+    },
+    {
+      title: 'Energy Demand &Weather Analysis',
+
+      description: 'Analysis of energy demand and weather patterns to optimize energy usage and reduce costs.',
+    
+    github: 'https://github.com/AhadAliBaig/Energy-Demand-generation-and-weather',
+    image: '/images/Energy.png'
     }
+
   ]
 
   return (

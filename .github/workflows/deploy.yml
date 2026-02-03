@@ -1,26 +1,47 @@
-name: Deploy to Oracle Cloud Infrastructure
+name: Deploy to Oracle Cloud 
 
 on:
-    workflow_dispatch:
+    push:
+        branches: [main]
 
 jobs:
     deploy:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout code
-              uses: actions/checkout@v4
-            
+              uses: actions/checkout@v3
             - name: Set up Node.js
-              uses: actions/setup-node@v4
+              uses: actions/setup-node@v3
               with:
-                node-version: 22
-
+                node-version: 18
             - name: Install dependencies
               run: npm install
-
-            - name: Build the application
+            - name: Build
               run: npm run build
 
-            - name: Deploy to Oracle Cloud Infrastructure
-              run: echo "Deploying to Oracle Cloud Infrastructure"
-
+            - name: Setup SSH key
+              run: |
+                mkdir -p ~/.ssh
+                echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/deploy_key
+                chmod 600 ~/.ssh/deploy_key
+            
+                
+            - name: Add server to know_hosts
+              run: |
+                 ssh-keyscan -H 40.233.107.165 >> ~/.ssh/known_hosts
+            
+            - name: Copy files to server
+              run: |
+                 scp -i ~/.ssh/deploy_key -r dist/* ubuntu@40.233.107.165:/tmp/portfolio
+            
+            -  name: Deploy on server
+              run: |
+                 ssh -i ~/.ssh/deploy_key ubuntu@40.233.107.165 << 'ENDSSH'
+                    sudo rm -rf /var/www/portfolio/assets
+                    sudo rm -f /var/www/portfolio/index.html
+                    sudo mv /tmp/portfolio/* /var/www/portfolio/ 2>/dev/null || true
+                    sudo chown -R www-data:www-data /var/www/portfolio
+                    sudo chmod -R 755 /var/www/portfolio
+                    sudo systemctl reload nginx
+                    echo "Deployment complete!"
+                 ENDSSH
