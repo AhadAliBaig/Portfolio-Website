@@ -39,8 +39,8 @@ function Projects() {
 
       description: 'Analysis of energy demand and weather patterns to optimize energy usage and reduce costs.',
     
-    github: 'https://github.com/AhadAliBaig/Energy-Demand-generation-and-weather',
-    image: '/images/Energy.png'
+      github: 'https://github.com/AhadAliBaig/Energy-Demand-generation-and-weather',
+      image: '/images/Energy.png'
     }
 
   ]
