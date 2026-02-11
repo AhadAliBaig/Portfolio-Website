@@ -65,6 +65,7 @@ function Projects() {
                   src={project.image} 
                   alt={project.title}
                   className="project-image"
+                  loading="lazy"
                   onError={(e) => {
                     // Fallback to placeholder if image fails to load
                     e.currentTarget.style.display = 'none';
