@@ -234,8 +234,11 @@ class CanvasTxt {
       this.context.font = this.font;
       const metrics = this.context.measureText(this.txt);
 
-      const textWidth = Math.ceil(metrics.width) + 20;
-      const textHeight = Math.ceil(metrics.actualBoundingBoxAscent + metrics.actualBoundingBoxDescent) + 20;
+      // Use generous padding to prevent cutoff (especially for descenders like 'g')
+      const ascent = metrics.actualBoundingBoxAscent ?? this.fontSize * 0.8;
+      const descent = metrics.actualBoundingBoxDescent ?? this.fontSize * 0.2;
+      const textWidth = Math.ceil(metrics.width) + 60; // Increased from 20 - prevents right-edge cutoff
+      const textHeight = Math.ceil(ascent + descent) + 60; // Extra padding top/bottom
 
       this.canvas.width = textWidth;
       this.canvas.height = textHeight;
@@ -247,11 +250,15 @@ class CanvasTxt {
       this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
       this.context.fillStyle = this.color;
       this.context.font = this.font;
+      this.context.textBaseline = 'top';
+      this.context.textAlign = 'left';
 
       const metrics = this.context.measureText(this.txt);
-      const yPos = 10 + metrics.actualBoundingBoxAscent;
+      const ascent = metrics.actualBoundingBoxAscent ?? this.fontSize * 0.8;
+      const xPos = 30; // Match padding from resize
+      const yPos = 30;
 
-      this.context.fillText(this.txt, 10, yPos);
+      this.context.fillText(this.txt, xPos, yPos);
     }
   }
 
@@ -329,8 +336,10 @@ class CanvAscii {
     try {
       await document.fonts.load('600 200px "IBM Plex Mono"');
       await document.fonts.load('500 12px "IBM Plex Mono"');
+      await document.fonts.ready;
+      // Brief delay so font rendering is fully ready before measureText()
+      await new Promise((r) => setTimeout(r, 150));
     } catch (e) {}
-    await document.fonts.ready;
     this.setMesh();
     this.setRenderer();
   }
