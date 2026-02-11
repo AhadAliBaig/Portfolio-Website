@@ -1,17 +1,20 @@
 .hero-section {
-  min-height: 85vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 2rem;
   padding-top: 1rem; /* Add this - space for fixed header */
   scroll-snap-align: start;
-  padding-bottom: -5rem;
+  position: relative;  /* Add this */
+  overflow: hidden;
 }
   
   .hero-content {
     max-width: 800px;
     text-align: left;
+    position: relative;  /* Add this */
+    z-index: 1; 
   }
   
   .hero-title {

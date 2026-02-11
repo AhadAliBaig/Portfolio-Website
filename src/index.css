@@ -12,7 +12,9 @@
 body {
   background-color: #0d0d0d;
   color: #ffffff;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: 'Figtree', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 400;
+  font-size: 1.125rem;
   overflow-x: hidden;
 }
 

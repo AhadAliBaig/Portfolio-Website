@@ -1,4 +1,5 @@
 import './Projects.css'
+import EnergyImage from '/public/images/Energy.png'
 
 function Projects() {
   const projects = [
@@ -35,12 +36,12 @@ function Projects() {
       image: '/images/studybuddy.png'
     },
     {
-      title: 'Energy Demand &Weather Analysis',
+      title: 'Energy Demand & Weather Analysis',
 
       description: 'Analysis of energy demand and weather patterns to optimize energy usage and reduce costs.',
     
       github: 'https://github.com/AhadAliBaig/Energy-Demand-generation-and-weather',
-      image: '/images/Energy.png'
+      image: EnergyImage
     }
 
   ]

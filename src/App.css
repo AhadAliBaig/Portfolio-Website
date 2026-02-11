@@ -4,6 +4,7 @@
   height: 100vh;
   position: relative;
   background-color: #0d0d0d;
+  padding-right: 0;
 }
 
 .light-rays-background {

@@ -1,9 +1,35 @@
 import './Header.css'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'  // Add useEffect
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isScrolledDown, setIsScrolledDown] = useState(false)  // Add this
+  const [lastScrollY, setLastScrollY] = useState(0)  // Add this
 
+  // Add scroll detection
+  useEffect(() => {
+    const scrollContainer = document.querySelector('.scroll-container')
+    
+    if (!scrollContainer) return
+    
+    const handleScroll = () => {
+      const currentScrollY = scrollContainer.scrollTop  // Use scrollTop instead of scrollY
+      
+      if (currentScrollY < 10) {
+        setIsScrolledDown(false)
+      } else if (currentScrollY > lastScrollY) {
+        setIsScrolledDown(true)
+      } else {
+        setIsScrolledDown(false)
+      }
+      
+      setLastScrollY(currentScrollY)
+    }
+  
+    scrollContainer.addEventListener('scroll', handleScroll, { passive: true })
+    return () => scrollContainer.removeEventListener('scroll', handleScroll)
+  }, [lastScrollY])
+  
   const handleNavClick = () => {
     setIsMenuOpen(false)
   }
@@ -13,7 +39,7 @@ function Header() {
   }
 
   return (
-    <header>
+    <header className={isScrolledDown ? 'hidden' : ''}>
       <nav className="header-nav">
         <div className="logo">
           <img src="/images/Submark.png" alt="Ahad" className="logo-image" />
