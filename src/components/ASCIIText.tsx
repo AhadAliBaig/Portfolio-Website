@@ -256,8 +256,8 @@ class CanvasTxt {
       this.context.textBaseline = 'top';
       this.context.textAlign = 'left';
 
-      const metrics = this.context.measureText(this.txt);
-      const ascent = metrics.actualBoundingBoxAscent ?? this.fontSize * 0.8;
+      
+      
       const xPos = 30; // Match padding from resize
       const yPos = 30;
 
