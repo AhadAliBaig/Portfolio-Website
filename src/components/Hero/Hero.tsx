@@ -3,11 +3,13 @@ import TextType from '../TextType';
 import PixelSnow from '../PixelSnow';
 import ScrollAnimation from '../ScrollAnimation';
 import ASCIIText from '../ASCIIText';
-import {useState, useEffect} from 'react';
+import {useState, useEffect, useRef} from 'react';
 
 function Hero() {
   // Detect if device is mobile/tablet
   const [isMobile, setIsMobile] = useState(false);
+  // Delay ASCIIText loading to avoid competing with PixelSnow
+  const [showASCII, setShowASCII] = useState(false);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -20,8 +22,16 @@ function Hero() {
     // Listen for resize events
     window.addEventListener('resize', checkMobile);
     
-    // Cleanup: remove event listener when component unmounts
-    return () => window.removeEventListener('resize', checkMobile);
+    // Delay ASCIIText initialization (let PixelSnow load first)
+    const asciiTimer = setTimeout(() => {
+      setShowASCII(true);
+    }, 500); // Wait 500ms after page load
+    
+    // Cleanup
+    return () => {
+      window.removeEventListener('resize', checkMobile);
+      clearTimeout(asciiTimer);
+    };
   }, []);
 
   return (
@@ -31,14 +41,14 @@ function Hero() {
         <PixelSnow 
           color="#ffffff"
           flakeSize={0.01}
-          minFlakeSize={isMobile ? 1.5 : 1.25}  // Larger flakes on mobile = fewer particles
-          pixelResolution={isMobile ? 150 : 200}  // Lower resolution on mobile
-          speed={isMobile ? 1.0 : 1.25}  // Slightly slower on mobile
-          density={isMobile ? 0.2 : 0.3}  // Less dense on mobile
+          minFlakeSize={isMobile ? 1.5 : 1.3}  // Slightly larger on desktop
+          pixelResolution={isMobile ? 120 : 180}  // Lower on desktop
+          speed={isMobile ? 0.9 : 1.1}  // Slower on desktop
+          density={isMobile ? 0.15 : 0.25}  // Less dense
           direction={125}
           brightness={1}
           depthFade={8}
-          farPlane={20}
+          farPlane={isMobile ? 15 : 18}
           gamma={0.4545}
           variant="square"
         />
@@ -47,24 +57,27 @@ function Hero() {
       {/* Content with Scroll Animation */}
       <ScrollAnimation>
         <div className="hero-content">
-          {/* ASCII Text */}
-          <div 
-            className="hero-ascii"
-          >
-            <ASCIIText
-              text="Ahad Baig"
-              enableWaves={false}
-              asciiFontSize={6}
-            />
+          {/* ASCII Text - Lazy loaded */}
+          <div className="hero-ascii">
+            {showASCII ? (
+              <ASCIIText
+                text="Ahad Baig"
+                enableWaves={false}
+                asciiFontSize={isMobile ? 4 : 5}
+              />
+            ) : (
+              <div style={{ height: '350px', display: 'flex', alignItems: 'center' }}>
+                <h1 style={{ fontSize: '4rem', color: 'white' }}>Ahad Baig</h1>
+              </div>
+            )}
           </div>
-
 
           {/* Typing Text */}
           <h1 className="hero-title">
             <TextType 
               text={[
-                "Welcome to my portfolio",           // First - greeting
-                "Transforming data into insights",   // Second - what you do
+                "Welcome to my portfolio",
+                "Transforming data into insights",
                 "Building scalable solutions",   
               ]}
               as="span"
