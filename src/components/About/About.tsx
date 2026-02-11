@@ -1,6 +1,7 @@
 import './About.css'
 import { useState } from 'react'
 import GradientText from '../GradientText'
+import ScrollAnimation from '../ScrollAnimation'
 import { 
   SiPython,
   SiJavascript,
@@ -23,6 +24,7 @@ function About() {
   return (
     <section id="about" className="about-section">
       <h2 className='section-title'>About Me</h2>
+      <ScrollAnimation>  {/* Wrap content in ScrollAnimation */}
         <div className='about-content'>
           <div className="about-code-block">
           <p>
@@ -38,7 +40,8 @@ function About() {
           </p>
         </div>
       </div>
-
+    </ScrollAnimation>
+    <ScrollAnimation>  {/* Wrap content in ScrollAnimation */}
       <div className='tabs'>
         <button
           className={activeTab === 'skills' ? 'tab active' : 'tab'}
@@ -53,8 +56,9 @@ function About() {
           Education
         </button>
       </div>
-
+    </ScrollAnimation>
       <div className="tab-content">
+        <ScrollAnimation>  {/* Wrap content in ScrollAnimation */}
         {activeTab === 'skills' && (
           <div className="content">
           <div className="skills-grid">
@@ -99,6 +103,7 @@ function About() {
             </div>
           </div>
         )}
+        </ScrollAnimation>
         {activeTab === 'education' && (
           <div className="content">
             <div className="education-entry">

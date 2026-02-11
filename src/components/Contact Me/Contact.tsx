@@ -2,6 +2,7 @@ import './Contact.css'
 import { useState } from 'react'
 import { SiGithub, SiLinkedin } from 'react-icons/si'
 import emailjs from '@emailjs/browser'
+import ScrollAnimation from '../ScrollAnimation'
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -48,7 +49,7 @@ function Contact() {
   return (
     <section id="contact" className="contact-section">
       <h2 className="section-title">Contact Me</h2>
-      
+      <ScrollAnimation>  {/* Wrap content in ScrollAnimation */}
       <div className="contact-container">
         <div className="contact-left">
           <h3 className="connect-title">Let's Connect</h3>
@@ -129,6 +130,7 @@ function Contact() {
           </form>
         </div>
       </div>
+    </ScrollAnimation>
     </section>
   )
 }

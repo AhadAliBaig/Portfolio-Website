@@ -1,5 +1,5 @@
 import './Projects.css'
-import EnergyImage from '/public/images/Energy.png'
+import ScrollAnimation from '../ScrollAnimation'
 
 function Projects() {
   const projects = [
@@ -41,7 +41,7 @@ function Projects() {
       description: 'Analysis of energy demand and weather patterns to optimize energy usage and reduce costs.',
     
       github: 'https://github.com/AhadAliBaig/Energy-Demand-generation-and-weather',
-      image: EnergyImage
+      image: '/images/Energy.png'
     }
 
   ]
@@ -49,7 +49,7 @@ function Projects() {
   return (
     <section id="projects" className="projects-section">
       <h2 className="section-title">Projects</h2>
-      
+      <ScrollAnimation>  {/* Wrap content in ScrollAnimation */}
       <div className="projects-grid">
         {projects.map((project, index) => (
           <a 
@@ -86,6 +86,7 @@ function Projects() {
           </a>
         ))}
       </div>
+    </ScrollAnimation>
     </section>
   )
 }

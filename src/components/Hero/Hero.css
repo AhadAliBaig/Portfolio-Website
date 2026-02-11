@@ -48,7 +48,7 @@
 
 
   .hero-description {
-    font-size: 1.25rem;
+    font-size: 1.4rem;
     color: white;
     line-height: 1.6;
     margin-bottom: 2rem;
@@ -57,7 +57,7 @@
   
     
   .hero-description-1 {
-    font-size: 1.25rem;
+    font-size: 1.4rem;
     color: white;
     line-height: 1.6;
     margin-bottom: 2rem;
@@ -74,7 +74,7 @@
     border: 2px solid white;
     color: white;
     padding: 0.75rem 2rem;
-    font-size: 1rem;
+    font-size: 1.2rem;
     cursor: pointer;
     transition: all 0.3s;
     border-radius: 4px;
@@ -86,4 +86,24 @@
   .resume-button:hover {
     background: white;
     color: black;
+  }
+
+  .hero-ascii {
+    margin-bottom: -2rem;
+    margin-top: 0;
+    text-align: left;
+    position: relative; /* Important - relative so absolute children work */
+    z-index: 2;
+    display: block;
+    width: 100%;
+    height: 100px; /* Add explicit height - adjust as needed */
+    min-height: 150px; /* Minimum height */
+  }
+  
+  .hero-title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
   }
