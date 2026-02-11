@@ -3,8 +3,27 @@ import TextType from '../TextType';
 import PixelSnow from '../PixelSnow';
 import ScrollAnimation from '../ScrollAnimation';
 import ASCIIText from '../ASCIIText';
+import {useState, useEffect} from 'react';
 
 function Hero() {
+  // Detect if device is mobile/tablet
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    // Check on mount
+    checkMobile();
+    
+    // Listen for resize events
+    window.addEventListener('resize', checkMobile);
+    
+    // Cleanup: remove event listener when component unmounts
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   return (
     <section id="hero" className="hero-section">
       {/* PixelSnow Background */}
@@ -12,10 +31,10 @@ function Hero() {
         <PixelSnow 
           color="#ffffff"
           flakeSize={0.01}
-          minFlakeSize={1.25}
-          pixelResolution={200}
-          speed={1.25}
-          density={0.3}
+          minFlakeSize={isMobile ? 1.5 : 1.25}  // Larger flakes on mobile = fewer particles
+          pixelResolution={isMobile ? 150 : 200}  // Lower resolution on mobile
+          speed={isMobile ? 1.0 : 1.25}  // Slightly slower on mobile
+          density={isMobile ? 0.2 : 0.3}  // Less dense on mobile
           direction={125}
           brightness={1}
           depthFade={8}
