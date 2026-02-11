@@ -31,18 +31,11 @@ function Hero() {
           {/* ASCII Text */}
           <div 
             className="hero-ascii"
-            style={{ 
-              position: 'relative',
-              width: '100%',
-              height: '350px',
-              minHeight: '150px',
-
-            }}
           >
             <ASCIIText
               text="Ahad Baig"
               enableWaves={false}
-              asciiFontSize={5}
+              asciiFontSize={6}
             />
           </div>
 
