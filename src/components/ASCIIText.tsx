@@ -237,8 +237,11 @@ class CanvasTxt {
       // Use generous padding to prevent cutoff (especially for descenders like 'g')
       const ascent = metrics.actualBoundingBoxAscent ?? this.fontSize * 0.8;
       const descent = metrics.actualBoundingBoxDescent ?? this.fontSize * 0.2;
-      const textWidth = Math.ceil(metrics.width) + 60; // Increased from 20 - prevents right-edge cutoff
-      const textHeight = Math.ceil(ascent + descent) + 60; // Extra padding top/bottom
+      const measuredWidth = Math.ceil(metrics.width) + 80;
+      // Minimum width: ensure full text fits even when font isn't loaded yet (first load)
+      const minWidth = this.txt.length * (this.fontSize * 0.55) + 80;
+      const textWidth = Math.max(measuredWidth, minWidth);
+      const textHeight = Math.ceil(ascent + descent) + 80;
 
       this.canvas.width = textWidth;
       this.canvas.height = textHeight;
@@ -337,8 +340,13 @@ class CanvAscii {
       await document.fonts.load('600 200px "IBM Plex Mono"');
       await document.fonts.load('500 12px "IBM Plex Mono"');
       await document.fonts.ready;
-      // Brief delay so font rendering is fully ready before measureText()
-      await new Promise((r) => setTimeout(r, 150));
+      // Wait for font to be usable (critical for first load when font was just fetched)
+      const maxWait = 500;
+      const start = Date.now();
+      while (!document.fonts.check('600 200px "IBM Plex Mono"') && Date.now() - start < maxWait) {
+        await new Promise((r) => setTimeout(r, 50));
+      }
+      await new Promise((r) => setTimeout(r, 100));
     } catch (e) {}
     this.setMesh();
     this.setRenderer();
