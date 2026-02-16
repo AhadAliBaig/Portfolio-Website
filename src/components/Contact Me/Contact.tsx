@@ -34,7 +34,7 @@ function Contact() {
                   Message sent successfully! I'll get back to you soon.
                 </div>
               )}
-              {state.errors.length > 0 && (
+              {state.errors && Object.keys(state.errors).length > 0 && (
                 <div className="form-message error">
                   Failed to send message. Please try again or contact me directly via email.
                 </div>
