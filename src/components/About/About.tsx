@@ -14,7 +14,14 @@ import {
   SiExpress,
   SiGithub,
   SiJira,
-  
+  SiPandas,
+  SiNumpy,
+  SiJupyter,
+  SiDocker,
+  SiMongodb,
+  SiRedis,
+  SiScikitlearn,
+  SiTableau,
 } from 'react-icons/si'
 import { FaJava, FaAws, FaMicrosoft } from 'react-icons/fa'
 
@@ -33,9 +40,9 @@ function About() {
               animationSpeed={8}
               direction="horizontal"
             >
-              I'm a Computer Science student at UNBC who loves building full stack applications and machine learning models. 
-              I'm particularly interested in backend development and DevOps, and I enjoy the entire process from designing APIs 
-              to deploying to the cloud. I'm always excited to learn new technologies and solve real problems with code.
+              CS student at UNBC focused on backend development, data analysis, and DevOps. 
+              I enjoy building APIs, working with data pipelines, and deploying applications to the cloud. 
+              Always learning new technologies and solving real problems with code.
             </GradientText>
           </p>
         </div>
@@ -83,9 +90,23 @@ function About() {
                 <li><SiReact className="skill-icon" /> React</li>
                 <li><SiAngular className="skill-icon" /> Angular</li>
                 <li><SiExpress className="skill-icon" /> Express.js</li>
+                <li><SiMongodb className="skill-icon" /> MongoDB</li>
+                <li><SiRedis className="skill-icon" /> Redis</li>
                 <li><span className="skill-text">REST APIs</span></li>
                 <li><span className="skill-text">System Design</span></li>
-                <li><span className="skill-text">Event-Driven Architecture</span></li>
+              </ul>
+            </div>
+            <div className="skill-category">
+              <h3>Data & Analytics</h3>
+              <ul>
+                <li><SiPandas className="skill-icon" /> Pandas</li>
+                <li><SiNumpy className="skill-icon" /> NumPy</li>
+                <li><SiScikitlearn className="skill-icon" /> Scikit-learn</li>
+                <li><SiJupyter className="skill-icon" /> Jupyter</li>
+                <li><SiTableau className="skill-icon" /> Tableau</li>
+                <li><span className="skill-text">Power BI</span></li>
+                <li><span className="skill-text">Matplotlib</span></li>
+                <li><span className="skill-text">Excel</span></li>
               </ul>
             </div>
             <div className="skill-category">
@@ -93,9 +114,9 @@ function About() {
               <ul>
                 <li><FaMicrosoft className="skill-icon" /> Azure</li>
                 <li><FaAws className="skill-icon" /> AWS <span className="skill-note">(deployment)</span></li>
+                <li><SiDocker className="skill-icon" /> Docker</li>
                 <li><span className="skill-text">CI/CD pipelines</span> <span className="skill-note">(GitHub Actions)</span></li>
                 <li><span className="skill-text">Integration Testing</span></li>
-                
                 <li><SiGithub className="skill-icon" /> GitHub</li>
                 <li><SiJira className="skill-icon" /> JIRA</li>
               </ul>
@@ -113,13 +134,13 @@ function About() {
                   
                 </div>
                 <div className="education-dates">
-                  <p>Jan. 2023 – Present</p>
+                  <p>Jan. 2023 – Dec. 2026 (Expected)</p>
                   <p>Prince George, BC</p>
                 </div>
               </div>
               <p className="degree">B.Sc. Computer Science, Minor in Management Information Systems</p>
               <p className="courses">
-                <strong>Key courses:</strong> Data Structures, Database Systems, Software Engineering, System Design
+                <strong>Key courses:</strong> Data Structures, Database Systems, Software Engineering, System Design, Data Mining, Networking, Business Intelligence
               </p>
             </div>
           </div>

@@ -2,6 +2,7 @@ import { lazy, Suspense } from 'react'
 import './App.css'
 import Header from './components/Header/Header'
 import Hero from './components/Hero/Hero'
+import Footer from './components/Footer/Footer'
 
 const About = lazy(() => import('./components/About/About'))
 const Projects = lazy(() => import('./components/Projects/Projects'))
@@ -21,6 +22,7 @@ function App() {
       <Suspense fallback={<section style={{ minHeight: '50vh' }} />}>
         <Contact />
       </Suspense>
+      <Footer />
     </div>
   )
 }

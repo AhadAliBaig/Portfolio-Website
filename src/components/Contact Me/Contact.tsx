@@ -14,7 +14,7 @@ function Contact() {
           <div className="contact-left">
             <h3 className="connect-title">Let's Connect</h3>
             <p className="connect-description">
-              I'm always open to discussing new opportunities, collaborations, or just having a chat about technology.
+              Currently seeking <strong>Summer 2026 internships</strong> in Software Engineering, Backend Development, or Data Analytics. Open to discussing opportunities or just chatting about tech!
             </p>
             
             <div className="social-icons">

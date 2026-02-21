@@ -5,45 +5,40 @@ function Projects() {
   const projects = [
     {
       title: 'Jobtrackr',
-      
       description: 'Full-stack job tracking platform with AI-powered resume matching and automated cover letter generation. Replaces spreadsheet tracking with a centralized dashboard.',
-     
+      tech: ['Angular', 'Node.js', 'Express', 'PostgreSQL', 'LLM'],
       github: 'https://jobtrackkr.netlify.app/login',
       image: '/images/jobtrackr.png'
     },
     {
       title: 'Credit Card Fraud Detection',
-      
       description: 'Machine learning pipeline for detecting fraudulent transactions using imbalanced dataset techniques. Achieved F1 score of 0.79 with optimized recall and false positive rates.',
-      
+      tech: ['Python', 'Pandas', 'Scikit-learn', 'Jupyter'],
       github: 'https://github.com/AhadAliBaig/Credit-Card-Fraud-Detection',
       image: '/images/creditcardfruaddetection.png'
     },
     {
       title: 'EmotAI',
-      
       description: 'Emotion detection application using face detection to identify emotions, specially configured for people with special needs. Features real-time feedback, interactive tutorials, and personalized guidance.',
-      
+      tech: ['Python', 'OpenCV', 'TensorFlow', 'Real-time Processing'],
       github: 'https://github.com/AhadAliBaig/EmotAI',
       image: '/images/emotai.png'
     },
     {
       title: 'Study Buddy',
-      
       description: 'Overall scheduler and study management application to help students organize their coursework, track assignments, and manage study schedules efficiently.',
-      period: 'ONLY FRONTEND IS HOSTED, SUBSCRIPTION FOR BACKEND HAS EXPIRED',
+      tech: ['Angular', 'Node.js', 'Express', 'MongoDB'],
+      period: 'Frontend demo only',
       github: 'https://study-buddy-unbc.netlify.app/calendar',
       image: '/images/studybuddy.png'
     },
     {
       title: 'Energy Demand & Weather Analysis',
-
       description: 'Analysis of energy demand and weather patterns to optimize energy usage and reduce costs.',
-    
+      tech: ['Python', 'Pandas', 'Matplotlib', 'Data Analysis'],
       github: 'https://github.com/AhadAliBaig/Energy-Demand-generation-and-weather',
-      image: '/images/Energy.png'
+      image: '/images/energy.png'
     }
-
   ]
 
   return (
@@ -79,7 +74,11 @@ function Projects() {
               </div>
               <div className="project-content">
                 <h3 className="project-title">{project.title}</h3>
-                
+                <div className="project-tech-tags">
+                  {project.tech.map((t, i) => (
+                    <span key={i} className="tech-tag">{t}</span>
+                  ))}
+                </div>
                 <p className="project-description">{project.description}</p>
                 <p className="project-period">{project.period}</p>
               </div>

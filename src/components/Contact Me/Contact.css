@@ -1,6 +1,6 @@
 .contact-section {
-  min-height: 100vh;
-  padding: 1rem 4rem 2rem;
+  min-height: auto;
+  padding: 4rem 4rem 3rem;
   max-width: 1200px;
   margin: 0 auto;
 }

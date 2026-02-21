@@ -95,7 +95,7 @@ function Hero() {
 
           {/* Fun Fact */}
           <p className="hero-description-1">
-            Fun fact: This site runs on my own Oracle Cloud server — I handle deployment, 
+            Fun fact: This site runs on my own Oracle Cloud server. I handle deployment, 
             CI/CD, and infrastructure just like a production application.
           </p>
           
