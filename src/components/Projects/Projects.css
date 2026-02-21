@@ -130,31 +130,35 @@
   transform: rotateY(180deg);
   display: flex;
   flex-direction: column;
-  padding: 1.5rem;
-  justify-content: space-between;
+  padding: 1.25rem;
+  background: linear-gradient(145deg, #0d0d0d 0%, #1a1a1a 100%);
 }
 
 .project-back-title {
   color: white;
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   font-weight: bold;
-  margin: 0 0 1rem 0;
+  margin: 0 0 0.75rem 0;
   text-align: center;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .project-back-highlights {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 6px;
-  padding: 1rem;
-  margin-bottom: 1rem;
+  background: rgba(74, 222, 128, 0.08);
+  border: 1px solid rgba(74, 222, 128, 0.2);
+  border-radius: 8px;
+  padding: 0.85rem;
+  margin-bottom: 0.75rem;
 }
 
 .project-back-highlights h4 {
-  color: white;
-  font-size: 0.85rem;
-  margin: 0 0 0.75rem 0;
+  color: #4ade80;
+  font-size: 0.7rem;
+  margin: 0 0 0.5rem 0;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
+  font-weight: 600;
 }
 
 .project-back-highlights ul {
@@ -164,9 +168,9 @@
 }
 
 .project-back-highlights li {
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 0.9rem;
-  padding: 0.3rem 0;
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 0.85rem;
+  padding: 0.25rem 0;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -176,11 +180,12 @@
   content: '✓';
   color: #4ade80;
   font-weight: bold;
+  font-size: 0.9rem;
 }
 
 .project-back-description {
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.8rem;
   line-height: 1.5;
   margin: 0;
   flex-grow: 1;
@@ -192,28 +197,31 @@
 
 .project-period {
   color: rgba(255, 255, 255, 0.5);
-  font-size: 0.8rem;
-  margin: 0.5rem 0;
+  font-size: 0.75rem;
+  margin: 0.5rem 0 0 0;
   font-style: italic;
+  text-align: center;
 }
 
 .project-link-button {
   display: block;
   text-align: center;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: linear-gradient(135deg, rgba(74, 222, 128, 0.15) 0%, rgba(74, 222, 128, 0.05) 100%);
+  border: 1px solid rgba(74, 222, 128, 0.3);
   color: white;
-  padding: 0.75rem 1rem;
-  border-radius: 4px;
+  padding: 0.65rem 1rem;
+  border-radius: 6px;
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 500;
   transition: all 0.2s;
   margin-top: auto;
 }
 
 .project-link-button:hover {
-  background: rgba(255, 255, 255, 0.2);
-  border-color: rgba(255, 255, 255, 0.5);
+  background: linear-gradient(135deg, rgba(74, 222, 128, 0.25) 0%, rgba(74, 222, 128, 0.1) 100%);
+  border-color: rgba(74, 222, 128, 0.5);
+  transform: translateY(-2px);
 }
 
 @media (max-width: 1024px) {

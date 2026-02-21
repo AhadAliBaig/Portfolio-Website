@@ -154,32 +154,33 @@ function About() {
         {activeTab === 'github' && (
           <div className="content">
             <div className="github-activity">
-              <div className="github-stats-grid">
+              <div className="github-stats-container">
                 <img 
-                  src="https://github-readme-stats.vercel.app/api?username=AhadAliBaig&show_icons=true&theme=dark&hide_border=true&bg_color=0d0d0d&title_color=ffffff&text_color=c9d1d9&icon_color=4ade80"
-                  alt="GitHub Stats"
-                  className="github-stats-card"
-                />
-                <img 
-                  src="https://github-readme-streak-stats.herokuapp.com/?user=AhadAliBaig&theme=dark&hide_border=true&background=0d0d0d&ring=4ade80&fire=4ade80&currStreakLabel=ffffff"
+                  src="https://github-readme-streak-stats.herokuapp.com/?user=AhadAliBaig&theme=dark&hide_border=true&background=0d0d0d&ring=4ade80&fire=4ade80&currStreakLabel=ffffff&sideLabels=ffffff&dates=9ca3af"
                   alt="GitHub Streak"
-                  className="github-stats-card"
-                />
-              </div>
-              <div className="github-languages">
-                <img 
-                  src="https://github-readme-stats.vercel.app/api/top-langs/?username=AhadAliBaig&layout=compact&theme=dark&hide_border=true&bg_color=0d0d0d&title_color=ffffff&text_color=c9d1d9"
-                  alt="Top Languages"
-                  className="github-langs-card"
+                  className="github-streak-card"
                 />
               </div>
               <div className="github-contribution">
-                <h4>Contribution Graph</h4>
-                <img 
-                  src="https://ghchart.rshah.org/4ade80/AhadAliBaig" 
-                  alt="GitHub Contribution Graph"
-                  className="github-chart"
-                />
+                <h4>Contribution Activity</h4>
+                <div className="contribution-wrapper">
+                  <img 
+                    src="https://ghchart.rshah.org/4ade80/AhadAliBaig" 
+                    alt="GitHub Contribution Graph"
+                    className="github-chart"
+                  />
+                </div>
+                <div className="contribution-legend">
+                  <span>Less</span>
+                  <div className="legend-squares">
+                    <div className="legend-square" style={{background: '#161b22'}}></div>
+                    <div className="legend-square" style={{background: '#0e4429'}}></div>
+                    <div className="legend-square" style={{background: '#006d32'}}></div>
+                    <div className="legend-square" style={{background: '#26a641'}}></div>
+                    <div className="legend-square" style={{background: '#4ade80'}}></div>
+                  </div>
+                  <span>More</span>
+                </div>
               </div>
               <a 
                 href="https://github.com/AhadAliBaig" 
