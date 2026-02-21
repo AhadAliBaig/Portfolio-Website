@@ -42,7 +42,7 @@ function Projects() {
       tech: ['Python', 'Pandas', 'Matplotlib', 'Data Analysis'],
       impact: ['Data pipeline', 'Visualization', 'Pattern analysis'],
       github: 'https://github.com/AhadAliBaig/Energy-Demand-generation-and-weather',
-      image: '/images/energy.png'
+      image: '/images/image.png'
     }
   ]
 

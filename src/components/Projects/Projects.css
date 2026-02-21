@@ -145,15 +145,11 @@
 }
 
 .project-back-highlights {
-  background: rgba(74, 222, 128, 0.08);
-  border: 1px solid rgba(74, 222, 128, 0.2);
-  border-radius: 8px;
-  padding: 0.85rem;
   margin-bottom: 0.75rem;
 }
 
 .project-back-highlights h4 {
-  color: #4ade80;
+  color: rgba(255, 255, 255, 0.6);
   font-size: 0.7rem;
   margin: 0 0 0.5rem 0;
   text-transform: uppercase;
@@ -168,19 +164,14 @@
 }
 
 .project-back-highlights li {
-  color: rgba(255, 255, 255, 0.95);
+  color: rgba(255, 255, 255, 0.9);
   font-size: 0.85rem;
-  padding: 0.25rem 0;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  padding: 0.3rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.project-back-highlights li::before {
-  content: '✓';
-  color: #4ade80;
-  font-weight: bold;
-  font-size: 0.9rem;
+.project-back-highlights li:last-child {
+  border-bottom: none;
 }
 
 .project-back-description {
@@ -206,11 +197,11 @@
 .project-link-button {
   display: block;
   text-align: center;
-  background: linear-gradient(135deg, rgba(74, 222, 128, 0.15) 0%, rgba(74, 222, 128, 0.05) 100%);
-  border: 1px solid rgba(74, 222, 128, 0.3);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
   color: white;
   padding: 0.65rem 1rem;
-  border-radius: 6px;
+  border-radius: 4px;
   text-decoration: none;
   font-size: 0.85rem;
   font-weight: 500;
@@ -219,8 +210,8 @@
 }
 
 .project-link-button:hover {
-  background: linear-gradient(135deg, rgba(74, 222, 128, 0.25) 0%, rgba(74, 222, 128, 0.1) 100%);
-  border-color: rgba(74, 222, 128, 0.5);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.5);
   transform: translateY(-2px);
 }
 
