@@ -1,6 +1,5 @@
 import './About.css'
 import { useState } from 'react'
-import GradientText from '../GradientText'
 import ScrollAnimation from '../ScrollAnimation'
 import { 
   SiPython,
@@ -31,45 +30,70 @@ function About() {
   return (
     <section id="about" className="about-section">
       <h2 className='section-title'>About Me</h2>
-      <ScrollAnimation>  {/* Wrap content in ScrollAnimation */}
-        <div className='about-content'>
-          <div className="about-code-block">
-          <p>
-            <GradientText 
-              colors={["#ffffff", "#e5e5e5", "#ffffff", "#e5e5e5", "#ffffff"]}
-              animationSpeed={8}
-              direction="horizontal"
-            >
+      
+      {/* Bento Grid Intro */}
+      <ScrollAnimation>
+        <div className="bento-grid">
+          {/* Main bio card - spans 2 cols and 2 rows */}
+          <div className="bento-card bento-main">
+            <h3>Hey, I'm Ahad</h3>
+            <p>
               CS student at UNBC focused on backend development, data analysis, and DevOps. 
-              I enjoy building APIs, working with data pipelines, and deploying applications to the cloud. 
-              Always learning new technologies and solving real problems with code.
-            </GradientText>
-          </p>
+              I enjoy building APIs, working with data pipelines, and deploying applications to the cloud.
+            </p>
+          </div>
+
+          {/* Education card */}
+          <div className="bento-card bento-small">
+            <span className="bento-icon">🎓</span>
+            <h4>UNBC</h4>
+            <p>B.Sc. Computer Science</p>
+          </div>
+
+          {/* Location card */}
+          <div className="bento-card bento-small">
+            <span className="bento-icon">📍</span>
+            <h4>Canada</h4>
+            <p>Prince George, BC</p>
+          </div>
+
+          {/* Tech stack preview */}
+          <div className="bento-card bento-tech">
+            <SiPython className="bento-tech-icon" />
+            <SiJavascript className="bento-tech-icon" />
+            <SiTypescript className="bento-tech-icon" />
+            <SiNodedotjs className="bento-tech-icon" />
+            <SiReact className="bento-tech-icon" />
+            <SiPostgresql className="bento-tech-icon" />
+            <SiDocker className="bento-tech-icon" />
+            <FaAws className="bento-tech-icon" />
+          </div>
         </div>
-      </div>
-    </ScrollAnimation>
-    <ScrollAnimation>  {/* Wrap content in ScrollAnimation */}
-      <div className='tabs'>
-        <button
-          className={activeTab === 'skills' ? 'tab active' : 'tab'}
-          onClick={() => setActiveTab('skills')}
-        >
-          Skills
-        </button>
-        <button
-          className={activeTab === 'education' ? 'tab active' : 'tab'}
-          onClick={() => setActiveTab('education')}
-        >
-          Education
-        </button>
-        <button
-          className={activeTab === 'github' ? 'tab active' : 'tab'}
-          onClick={() => setActiveTab('github')}
-        >
-          GitHub
-        </button>
-      </div>
-    </ScrollAnimation>
+      </ScrollAnimation>
+
+      {/* Tabs */}
+      <ScrollAnimation>
+        <div className='tabs'>
+          <button
+            className={activeTab === 'skills' ? 'tab active' : 'tab'}
+            onClick={() => setActiveTab('skills')}
+          >
+            Skills
+          </button>
+          <button
+            className={activeTab === 'education' ? 'tab active' : 'tab'}
+            onClick={() => setActiveTab('education')}
+          >
+            Education
+          </button>
+          <button
+            className={activeTab === 'github' ? 'tab active' : 'tab'}
+            onClick={() => setActiveTab('github')}
+          >
+            GitHub
+          </button>
+        </div>
+      </ScrollAnimation>
       <div className="tab-content">
         <ScrollAnimation>  {/* Wrap content in ScrollAnimation */}
         {activeTab === 'skills' && (

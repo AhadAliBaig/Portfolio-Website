@@ -147,3 +147,192 @@
     font-size: 1.5rem !important;
   }
 }
+
+/* Hero Variant Switcher */
+.hero-variant-container {
+  transition: opacity 0.3s ease;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 2rem;
+}
+
+/* Navigation Arrows */
+.hero-nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.hero-nav-arrow:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.hero-nav-left {
+  left: 2rem;
+}
+
+.hero-nav-right {
+  right: 2rem;
+}
+
+/* Dot Navigation */
+.hero-dots {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.75rem;
+  z-index: 10;
+}
+
+.hero-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  border: none;
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.hero-dot.active {
+  width: 24px;
+  background: white;
+}
+
+.hero-dot:hover {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+/* Typewriter Hero Styles */
+.hero-typewriter-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-family: 'Fira Code', 'Consolas', monospace;
+  padding: 2rem;
+}
+
+.typewriter-terminal {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.terminal-prompt {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.typewriter-name {
+  font-size: 4.5rem;
+  color: white;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  font-family: 'Fira Code', 'Consolas', monospace;
+}
+
+.typewriter-cursor {
+  width: 4px;
+  height: 4.5rem;
+  background: white;
+  margin-left: 8px;
+  display: inline-block;
+  transition: opacity 0.1s;
+}
+
+.typewriter-role {
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 1.5rem;
+  font-size: 1.2rem;
+}
+
+.typewriter-info {
+  margin-top: 2rem;
+  text-align: center;
+  max-width: 600px;
+}
+
+.typewriter-info .hero-description {
+  text-align: center;
+}
+
+.typewriter-info .resume-button {
+  margin: 2rem auto 0;
+}
+
+/* Responsive for Hero Switcher */
+@media (max-width: 768px) {
+  .hero-nav-arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+  
+  .hero-nav-left {
+    left: 1rem;
+  }
+  
+  .hero-nav-right {
+    right: 1rem;
+  }
+  
+  .typewriter-name {
+    font-size: 2.5rem;
+  }
+  
+  .typewriter-cursor {
+    height: 2.5rem;
+  }
+  
+  .hero-dots {
+    bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-nav-arrow {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+  
+  .hero-nav-left {
+    left: 0.5rem;
+  }
+  
+  .hero-nav-right {
+    right: 0.5rem;
+  }
+  
+  .typewriter-name {
+    font-size: 2rem;
+  }
+  
+  .typewriter-cursor {
+    height: 2rem;
+    width: 3px;
+  }
+}

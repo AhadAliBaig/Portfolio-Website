@@ -13,6 +13,129 @@
   text-align: center;
 }
 
+/* Bento Grid Layout */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.bento-card {
+  background: #161616;
+  border-radius: 16px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.bento-card:hover {
+  transform: translateY(-4px);
+  background: #1a1a1a;
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.bento-main {
+  grid-column: span 2;
+  grid-row: span 2;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.bento-main h3 {
+  color: white;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.bento-main p {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+.bento-small {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.bento-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.bento-small h4 {
+  color: white;
+  margin: 0.3rem 0;
+  font-size: 1rem;
+}
+
+.bento-small p {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.bento-tech {
+  grid-column: span 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1.5rem;
+}
+
+.bento-tech-icon {
+  font-size: 1.75rem;
+  color: rgba(255, 255, 255, 0.7);
+  transition: color 0.3s ease;
+}
+
+.bento-tech-icon:hover {
+  color: white;
+}
+
+/* Responsive Bento */
+@media (max-width: 900px) {
+  .bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .bento-main {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+  
+  .bento-tech {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 480px) {
+  .bento-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .bento-main,
+  .bento-tech {
+    grid-column: span 1;
+  }
+  
+  .bento-tech {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .bento-tech-icon {
+    font-size: 1.5rem;
+  }
+}
+
+/* Legacy about-content (keeping for backwards compat) */
 .about-content {
   color: white;
   font-size: 1.125rem;
