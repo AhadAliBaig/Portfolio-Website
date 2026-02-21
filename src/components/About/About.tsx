@@ -62,6 +62,12 @@ function About() {
         >
           Education
         </button>
+        <button
+          className={activeTab === 'github' ? 'tab active' : 'tab'}
+          onClick={() => setActiveTab('github')}
+        >
+          GitHub
+        </button>
       </div>
     </ScrollAnimation>
       <div className="tab-content">
@@ -142,6 +148,47 @@ function About() {
               <p className="courses">
                 <strong>Key courses:</strong> Data Structures, Database Systems, Software Engineering, System Design, Data Mining, Networking, Business Intelligence
               </p>
+            </div>
+          </div>
+        )}
+        {activeTab === 'github' && (
+          <div className="content">
+            <div className="github-activity">
+              <div className="github-stats-grid">
+                <img 
+                  src="https://github-readme-stats.vercel.app/api?username=AhadAliBaig&show_icons=true&theme=dark&hide_border=true&bg_color=0d0d0d&title_color=ffffff&text_color=c9d1d9&icon_color=4ade80"
+                  alt="GitHub Stats"
+                  className="github-stats-card"
+                />
+                <img 
+                  src="https://github-readme-streak-stats.herokuapp.com/?user=AhadAliBaig&theme=dark&hide_border=true&background=0d0d0d&ring=4ade80&fire=4ade80&currStreakLabel=ffffff"
+                  alt="GitHub Streak"
+                  className="github-stats-card"
+                />
+              </div>
+              <div className="github-languages">
+                <img 
+                  src="https://github-readme-stats.vercel.app/api/top-langs/?username=AhadAliBaig&layout=compact&theme=dark&hide_border=true&bg_color=0d0d0d&title_color=ffffff&text_color=c9d1d9"
+                  alt="Top Languages"
+                  className="github-langs-card"
+                />
+              </div>
+              <div className="github-contribution">
+                <h4>Contribution Graph</h4>
+                <img 
+                  src="https://ghchart.rshah.org/4ade80/AhadAliBaig" 
+                  alt="GitHub Contribution Graph"
+                  className="github-chart"
+                />
+              </div>
+              <a 
+                href="https://github.com/AhadAliBaig" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="github-profile-link"
+              >
+                View Full Profile →
+              </a>
             </div>
           </div>
         )}

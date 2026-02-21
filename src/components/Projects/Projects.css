@@ -19,28 +19,43 @@
   gap: 2rem;
 }
 
-.project-card-link {
-  text-decoration: none;
-  display: block;
-  color: inherit;
+/* Flip Card Container */
+.project-card-container {
+  perspective: 1000px;
+  height: 380px;
 }
 
-.project-card {
+.project-card-flipper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.project-card-container:hover .project-card-flipper {
+  transform: rotateY(180deg);
+}
+
+/* Front and Back shared styles */
+.project-card-front,
+.project-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
   background: #0d0d0d;
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-left: 3px solid rgba(255, 255, 255, 0.8);
   border-radius: 4px;
   overflow: hidden;
-  transition: transform 0.3s, border-color 0.3s;
-  display: flex;
-  flex-direction: column;
-  cursor: pointer;
-  height: 100%;
 }
 
-.project-card-link:hover .project-card {
-  transform: translateY(-4px);
-  border-color: rgba(255, 255, 255, 0.6);
+/* Front of card */
+.project-card-front {
+  display: flex;
+  flex-direction: column;
 }
 
 .project-thumbnail {
@@ -84,37 +99,21 @@
 }
 
 .project-content {
-  padding: 1.5rem;
+  padding: 1.25rem;
   flex-grow: 1;
-}
-
-.project-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 0.5rem;
-  gap: 0.5rem;
 }
 
 .project-title {
   color: white;
   font-size: 1.25rem;
   font-weight: bold;
-  margin: 0;
-}
-
-.project-role {
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 0.75rem;
-  white-space: nowrap;
-  flex-shrink: 0;
+  margin: 0 0 0.75rem 0;
 }
 
 .project-tech-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem;
-  margin-bottom: 0.75rem;
 }
 
 .tech-tag {
@@ -126,25 +125,95 @@
   border-radius: 3px;
 }
 
-.project-tech {
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 0.85rem;
-  margin-bottom: 0.75rem;
-  font-style: italic;
+/* Back of card */
+.project-card-back {
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  justify-content: space-between;
 }
 
-.project-description {
+.project-back-title {
+  color: white;
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 0 0 1rem 0;
+  text-align: center;
+}
+
+.project-back-highlights {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 6px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.project-back-highlights h4 {
+  color: white;
+  font-size: 0.85rem;
+  margin: 0 0 0.75rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.project-back-highlights ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.project-back-highlights li {
   color: rgba(255, 255, 255, 0.9);
-  font-size: 0.95rem;
-  line-height: 1.6;
-  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+  padding: 0.3rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.project-back-highlights li::before {
+  content: '✓';
+  color: #4ade80;
+  font-weight: bold;
+}
+
+.project-back-description {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin: 0;
+  flex-grow: 1;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 
 .project-period {
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 0.85rem;
-  margin: 0;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.8rem;
+  margin: 0.5rem 0;
   font-style: italic;
+}
+
+.project-link-button {
+  display: block;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+  margin-top: auto;
+}
+
+.project-link-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
 }
 
 @media (max-width: 1024px) {
@@ -160,5 +229,9 @@
   
   .projects-section {
     padding: 1rem 2rem 2rem;
+  }
+
+  .project-card-container {
+    height: 360px;
   }
 }

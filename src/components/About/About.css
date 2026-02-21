@@ -266,3 +266,78 @@
 .about-code-block p > * {
   display: inline;
 }
+
+/* GitHub Activity Section */
+.github-activity {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem 0;
+}
+
+.github-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 900px;
+}
+
+.github-stats-card {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.github-languages {
+  width: 100%;
+  max-width: 400px;
+}
+
+.github-langs-card {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.github-contribution {
+  width: 100%;
+  max-width: 900px;
+  text-align: center;
+}
+
+.github-contribution h4 {
+  color: white;
+  font-size: 1rem;
+  margin: 0 0 1rem 0;
+}
+
+.github-chart {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.github-profile-link {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+.github-profile-link:hover {
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+  .github-stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
