@@ -3,6 +3,7 @@ import './App.css'
 import Header from './components/Header/Header'
 import Hero from './components/Hero/Hero'
 import Footer from './components/Footer/Footer'
+import BackToTop from './components/BackToTop/BackToTop'
 
 const About = lazy(() => import('./components/About/About'))
 const Projects = lazy(() => import('./components/Projects/Projects'))
@@ -23,6 +24,7 @@ function App() {
         <Contact />
       </Suspense>
       <Footer />
+      <BackToTop />
     </div>
   )
 }

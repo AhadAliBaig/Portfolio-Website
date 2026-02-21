@@ -80,7 +80,7 @@ function Projects() {
                   ))}
                 </div>
                 <p className="project-description">{project.description}</p>
-                <p className="project-period">{project.period}</p>
+                {project.period && <p className="project-period">{project.period}</p>}
               </div>
             </div>
           </a>
