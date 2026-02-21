@@ -76,9 +76,9 @@ function Hero() {
           <h1 className="hero-title">
             <TextType 
               text={[
-                "Welcome to my portfolio",
+                "Building backend systems & APIs",
                 "Transforming data into insights",
-                "Building scalable solutions",   
+                "Solving problems with clean code",   
               ]}
               as="span"
               typingSpeed={100}
@@ -89,14 +89,14 @@ function Hero() {
 
           {/* Description */}
           <p className="hero-description">
-            I'm a 4th Year Computer Science student who builds applications and analyzes data 
-            to solve real problems. Take a look around to see what I've been working on
+            4th Year CS student passionate about backend development and data analysis. 
+            Currently seeking Summer 2026 internships in SWE, Backend, or Data Analytics.
           </p>
 
           {/* Fun Fact */}
           <p className="hero-description-1">
-            Fun fact: I host this website on my own Oracle Cloud server, which means I handle 
-            everything from deployment to keeping it running, just like a real production application.
+            Fun fact: This site runs on my own Oracle Cloud server — I handle deployment, 
+            CI/CD, and infrastructure just like a production application.
           </p>
           
           {/* Resume Button */}
