@@ -17,7 +17,6 @@ import {
   SiJupyter,
   SiDocker,
   SiMongodb,
-  SiRedis,
   SiScikitlearn,
   SiTableau,
 } from 'react-icons/si'
