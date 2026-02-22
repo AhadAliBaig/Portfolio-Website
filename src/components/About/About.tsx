@@ -5,7 +5,6 @@ import {
   SiPython,
   SiJavascript,
   SiTypescript,
-  SiRuby,
   SiPostgresql,
   SiNodedotjs,
   SiReact,
@@ -47,7 +46,7 @@ function About() {
           <div className="bento-card bento-small">
             <span className="bento-icon">🎓</span>
             <h4>UNBC</h4>
-            <p>B.Sc. Computer Science</p>
+            <p>B.Sc. Computer Science & Management Information Systems</p>
           </div>
 
           {/* Location card */}
@@ -81,6 +80,12 @@ function About() {
             Skills
           </button>
           <button
+            className={activeTab === 'experience' ? 'tab active' : 'tab'}
+            onClick={() => setActiveTab('experience')}
+          >
+            Experience
+          </button>
+          <button
             className={activeTab === 'education' ? 'tab active' : 'tab'}
             onClick={() => setActiveTab('education')}
           >
@@ -98,80 +103,177 @@ function About() {
         <ScrollAnimation>  {/* Wrap content in ScrollAnimation */}
         {activeTab === 'skills' && (
           <div className="content">
-          <div className="skills-grid">
-            <div className="skill-category">
-              <h3>Programming & Scripting</h3>
-              <ul>
-                <li><SiPython className="skill-icon" /> Python</li>
-                <li><FaJava className="skill-icon" /> Java</li>
-                <li><SiJavascript className="skill-icon" /> JavaScript</li>
-                <li><SiTypescript className="skill-icon" /> TypeScript</li>
-                <li><SiRuby className="skill-icon" /> Ruby <span className="learning">(learning)</span></li>
-                <li><SiPostgresql className="skill-icon" /> SQL</li>
-                <li><span className="skill-text">C</span></li>
-                <li><span className="skill-text">Bash</span></li>
-                <li><span className="skill-text">PowerShell</span></li>
-              </ul>
-            </div>
-            <div className="skill-category">
-              <h3>Web, Backend & Systems</h3>
-              <ul>
-                <li><SiNodedotjs className="skill-icon" /> Node.js</li>
-                <li><SiReact className="skill-icon" /> React</li>
-                <li><SiAngular className="skill-icon" /> Angular</li>
-                <li><SiExpress className="skill-icon" /> Express.js</li>
-                <li><SiMongodb className="skill-icon" /> MongoDB</li>
-                <li><SiRedis className="skill-icon" /> Redis</li>
-                <li><span className="skill-text">REST APIs</span></li>
-                <li><span className="skill-text">System Design</span></li>
-              </ul>
-            </div>
-            <div className="skill-category">
-              <h3>Data & Analytics</h3>
-              <ul>
-                <li><SiPandas className="skill-icon" /> Pandas</li>
-                <li><SiNumpy className="skill-icon" /> NumPy</li>
-                <li><SiScikitlearn className="skill-icon" /> Scikit-learn</li>
-                <li><SiJupyter className="skill-icon" /> Jupyter</li>
-                <li><SiTableau className="skill-icon" /> Tableau</li>
-                <li><span className="skill-text">Power BI</span></li>
-                <li><span className="skill-text">Matplotlib</span></li>
-                <li><span className="skill-text">Excel</span></li>
-              </ul>
-            </div>
-            <div className="skill-category">
-              <h3>Cloud, DevOps & Tools</h3>
-              <ul>
-                <li><FaMicrosoft className="skill-icon" /> Azure</li>
-                <li><FaAws className="skill-icon" /> AWS <span className="skill-note">(deployment)</span></li>
-                <li><SiDocker className="skill-icon" /> Docker</li>
-                <li><span className="skill-text">CI/CD pipelines</span> <span className="skill-note">(GitHub Actions)</span></li>
-                <li><span className="skill-text">Integration Testing</span></li>
-                <li><SiGithub className="skill-icon" /> GitHub</li>
-                <li><SiJira className="skill-icon" /> JIRA</li>
-              </ul>
+            <div className="skills-compact">
+              <div className="skill-row">
+                <h4>Languages</h4>
+                <div className="skill-tags">
+                  <span className="skill-tag"><SiPython /> Python</span>
+                  <span className="skill-tag"><FaJava /> Java</span>
+                  <span className="skill-tag"><SiJavascript /> JavaScript</span>
+                  <span className="skill-tag"><SiTypescript /> TypeScript</span>
+                  <span className="skill-tag"><SiPostgresql /> SQL</span>
+                  <span className="skill-tag">C</span>
+                  <span className="skill-tag">Bash</span>
+                </div>
+              </div>
+
+              <div className="skill-row">
+                <h4>Backend & Web</h4>
+                <div className="skill-tags">
+                  <span className="skill-tag"><SiNodedotjs /> Node.js</span>
+                  <span className="skill-tag"><SiReact /> React</span>
+                  <span className="skill-tag"><SiAngular /> Angular</span>
+                  <span className="skill-tag"><SiExpress /> Express</span>
+                  <span className="skill-tag"><SiMongodb /> MongoDB</span>
+                  <span className="skill-tag"><SiPostgresql /> PostgreSQL</span>
+              
+                  <span className="skill-tag">REST APIs</span>
+                </div>
+              </div>
+
+              <div className="skill-row">
+                <h4>Data & ML</h4>
+                <div className="skill-tags">
+                  <span className="skill-tag"><SiPandas /> Pandas</span>
+                  <span className="skill-tag"><SiNumpy /> NumPy</span>
+                  <span className="skill-tag"><SiScikitlearn /> Scikit-learn</span>
+                  <span className="skill-tag"><SiJupyter /> Jupyter</span>
+                  <span className="skill-tag"><SiTableau /> Tableau</span>
+                  <span className="skill-tag">Power BI</span>
+                  <span className="skill-tag">Matplotlib</span>
+                </div>
+              </div>
+
+              <div className="skill-row">
+                <h4>DevOps & Cloud</h4>
+                <div className="skill-tags">
+                  <span className="skill-tag"><SiDocker /> Docker</span>
+                  <span className="skill-tag"><FaAws /> AWS</span>
+                  <span className="skill-tag"><FaMicrosoft /> Azure</span>
+                  <span className="skill-tag"><SiGithub /> GitHub Actions</span>
+                  <span className="skill-tag"><SiJira /> JIRA</span>
+                  <span className="skill-tag">CI/CD</span>
+                </div>
               </div>
             </div>
           </div>
         )}
         </ScrollAnimation>
-        {activeTab === 'education' && (
+        {activeTab === 'experience' && (
           <div className="content">
-            <div className="education-entry">
-              <div className="education-header">
-                <div className="education-title">
-                  <h3>University of Northern British Columbia</h3>
-                  
-                </div>
-                <div className="education-dates">
-                  <p>Jan. 2023 – Dec. 2026 (Expected)</p>
-                  <p>Prince George, BC</p>
+            <div className="timeline-simple">
+              <div className="timeline-line"></div>
+              
+              <div className="timeline-entry">
+                <div className="timeline-dot"></div>
+                <div className="timeline-info">
+                  <div className="timeline-row">
+                    <span className="timeline-year">2025</span>
+                    <span className="timeline-location">Hybrid</span>
+                  </div>
+                  <h4>AI & Data Science Intern</h4>
+                  <p>Aga Khan University</p>
                 </div>
               </div>
-              <p className="degree">B.Sc. Computer Science, Minor in Management Information Systems</p>
-              <p className="courses">
-                <strong>Key courses:</strong> Data Structures, Database Systems, Software Engineering, System Design, Data Mining, Networking, Business Intelligence
-              </p>
+
+              <div className="timeline-entry">
+                <div className="timeline-dot"></div>
+                <div className="timeline-info">
+                  <div className="timeline-row">
+                    <span className="timeline-year">2025</span>
+                    <span className="timeline-location">Prince George, BC</span>
+                  </div>
+                  <h4>Student Researcher | UNBC Robotics Lab</h4>
+                  <p>UNBC</p>
+                </div>
+              </div>
+
+              <div className="timeline-entry">
+                <div className="timeline-dot"></div>
+                <div className="timeline-info">
+                  <div className="timeline-row">
+                    <span className="timeline-year">2025</span>
+                    <span className="timeline-location">Prince George, BC</span>
+                  </div>
+                  <h4>Senate Committee Member</h4>
+                  <p>UNBC</p>
+                </div>
+              </div>
+
+              <div className="timeline-entry">
+                <div className="timeline-dot"></div>
+                <div className="timeline-info">
+                  <div className="timeline-row">
+                    <span className="timeline-year">2023 - 2025</span>
+                    <span className="timeline-location">Prince George, BC</span>
+                  </div>
+                  <h4>Student Assistant x 3</h4>
+                  <p>UNBC - Math (2023), Ethics in Computing (2024-2025)</p>
+                </div>
+              </div>
+
+              <div className="timeline-entry">
+                <div className="timeline-dot"></div>
+                <div className="timeline-info">
+                  <div className="timeline-row">
+                    <span className="timeline-year">2023</span>
+                    <span className="timeline-location">Prince George, BC</span>
+                  </div>
+                  <h4>Vault & Customer Service</h4>
+                  <p>The Home Depot</p>
+                </div>
+              </div>
+
+              <div className="timeline-entry">
+                <div className="timeline-dot"></div>
+                <div className="timeline-info">
+                  <div className="timeline-row">
+                    <span className="timeline-year">2023</span>
+                    <span className="timeline-location">Edmonton, AB</span>
+                  </div>
+                  <h4>JDC West Competition</h4>
+                  <p>UNBC - Business Technology Team</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+        {activeTab === 'education' && (
+          <div className="content">
+            <div className="timeline-simple">
+              <div className="timeline-line"></div>
+              
+              <div className="timeline-entry">
+                <div className="timeline-dot"></div>
+                <div className="timeline-info">
+                  <div className="timeline-row">
+                    <span className="timeline-year">2023 - 2026</span>
+                    <span className="timeline-location">Prince George, BC</span>
+                  </div>
+                  <h4>University of Northern British Columbia</h4>
+                  <p>B.Sc. Computer Science, Minor in Management Information Systems</p>
+                  <p className="courses-inline">Data Structures, Database Systems, Software Engineering, System Design, Data Mining, Networking, Business Intelligence</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Awards & Honors */}
+            <h3 className="awards-title">Awards & Honors</h3>
+            <div className="awards-list">
+              <div className="award-item">
+                <div className="award-header">
+                  <h4>Dean's List</h4>
+                  <span className="award-date">Sep 2025</span>
+                </div>
+                <p>UNBC - Top 10% GPA in Faculty of Science and Engineering</p>
+              </div>
+              <div className="award-item">
+                <div className="award-header">
+                  <h4>Raven Scholarship</h4>
+                  <span className="award-date">Mar 2023</span>
+                </div>
+                <p>UNBC - Competitive early entrance scholarship for academic achievement and community leadership</p>
+              </div>
             </div>
           </div>
         )}

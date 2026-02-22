@@ -47,7 +47,7 @@
 
 .bento-main h3 {
   color: white;
-  font-size: 1.8rem;
+  font-size: 2rem;
   margin-bottom: 1rem;
   font-weight: 600;
 }
@@ -55,7 +55,7 @@
 .bento-main p {
   color: rgba(255, 255, 255, 0.7);
   line-height: 1.7;
-  font-size: 1rem;
+  font-size: 1.15rem;
 }
 
 .bento-small {
@@ -72,12 +72,12 @@
 .bento-small h4 {
   color: white;
   margin: 0.3rem 0;
-  font-size: 1rem;
+  font-size: 1.15rem;
 }
 
 .bento-small p {
   color: rgba(255, 255, 255, 0.5);
-  font-size: 0.85rem;
+  font-size: 1rem;
   margin: 0;
 }
 
@@ -203,6 +203,70 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   margin-top: 2rem;
+}
+
+/* Compact Skills Layout */
+.skills-compact {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.skill-row {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  align-items: start;
+  gap: 1rem;
+}
+
+.skill-row h4 {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin: 0;
+  padding-top: 0.5rem;
+  text-align: right;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.15rem;
+  padding: 0.5rem 0.85rem;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.skill-tag:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.skill-tag svg {
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .skill-row {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .skill-row h4 {
+    text-align: left;
+    padding-top: 0;
+  }
 }
 
 .skill-category {
@@ -486,5 +550,159 @@
   
   .contribution-wrapper {
     padding: 0.5rem;
+  }
+}
+
+/* Simple Timeline Styles */
+.timeline-simple {
+  position: relative;
+  max-width: 700px;
+  margin: 0 auto;
+  padding-left: 50px;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 15px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+}
+
+.timeline-entry {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.timeline-entry:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -42px;
+  top: 6px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: white;
+  border: 3px solid #0a0a0a;
+  flex-shrink: 0;
+}
+
+.timeline-info {
+  flex: 1;
+}
+
+.timeline-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.25rem;
+}
+
+.timeline-year {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.timeline-location {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1rem;
+}
+
+.timeline-info h4 {
+  color: white;
+  font-size: 1.4rem;
+  margin: 0 0 0.35rem 0;
+  font-weight: 600;
+}
+
+.timeline-info p {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1.15rem;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.courses-inline {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1.05rem;
+  margin-top: 0.5rem !important;
+  font-style: italic;
+}
+
+/* Awards Section */
+.awards-title {
+  color: white;
+  font-size: 1.5rem;
+  margin: 2.5rem 0 1rem 0;
+  font-weight: 600;
+}
+
+.awards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.award-item {
+  background: #0d0d0d;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-left: 3px solid rgba(255, 255, 255, 0.6);
+  border-radius: 4px;
+  padding: 1rem 1.25rem;
+}
+
+.award-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.35rem;
+}
+
+.award-item h4 {
+  color: white;
+  font-size: 1.3rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+.award-date {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1rem;
+}
+
+.award-item p {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1.1rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .timeline-simple {
+    padding-left: 40px;
+  }
+  
+  .timeline-dot {
+    left: -32px;
+  }
+
+  .timeline-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.15rem;
+  }
+
+  .award-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
   }
 }
