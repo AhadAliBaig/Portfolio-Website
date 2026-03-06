@@ -1,7 +1,9 @@
 import './Projects.css'
+import { useState } from 'react'
 import ScrollAnimation from '../ScrollAnimation'
 
 function Projects() {
+  const [expandedCard, setExpandedCard] = useState<number | null>(null)
   const projects = [
     {
       title: 'Jobtrackr',
@@ -52,7 +54,11 @@ function Projects() {
       <ScrollAnimation>
       <div className="projects-grid">
         {projects.map((project, index) => (
-          <div key={index} className="project-card">
+          <div
+            key={index}
+            className={`project-card ${expandedCard === index ? 'overlay-visible' : ''}`}
+            onClick={() => setExpandedCard(expandedCard === index ? null : index)}
+          >
             <div className="project-thumbnail">
               <img 
                 src={project.image} 
@@ -93,6 +99,7 @@ function Projects() {
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="project-link-button"
+                onClick={(e) => e.stopPropagation()}
               >
                 View Project →
               </a>

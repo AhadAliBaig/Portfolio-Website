@@ -99,6 +99,7 @@
 /* Hover Overlay */
 .project-overlay {
   position: absolute;
+  top: 0;
   bottom: 0;
   left: 0;
   right: 0;
@@ -113,7 +114,8 @@
   gap: 0.5rem;
 }
 
-.project-card:hover .project-overlay {
+.project-card:hover .project-overlay,
+.project-card.overlay-visible .project-overlay {
   transform: translateY(0);
 }
 
@@ -195,11 +197,47 @@
     padding: 1rem 2rem 2rem;
   }
 
+  /* Taller cards on mobile so overlay fits and covers full card */
   .project-card {
-    height: 300px;
+    height: 480px;
+    min-height: 480px;
   }
 
-  /* Touch devices: show hint */
+  .project-thumbnail {
+    height: 200px;
+  }
+
+  .project-overlay {
+    padding: 1.25rem;
+  }
+
+  .overlay-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .overlay-description {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+  }
+
+  .overlay-highlights {
+    gap: 0.35rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .highlight-tag {
+    font-size: 0.85rem;
+    padding: 0.3rem 0.5rem;
+  }
+
+  .project-link-button {
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+  }
+
+  /* Touch hint - hide when overlay is visible */
   .project-card::after {
     content: 'Tap for details';
     position: absolute;
@@ -211,7 +249,8 @@
     transition: opacity 0.3s;
   }
 
-  .project-card:hover::after {
+  .project-card:hover::after,
+  .project-card.overlay-visible::after {
     opacity: 0;
   }
 }
