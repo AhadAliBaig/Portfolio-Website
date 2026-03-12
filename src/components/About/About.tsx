@@ -11,12 +11,12 @@ import {
   SiAngular,
   SiExpress,
   SiGithub,
-  SiJira,
+
   SiPandas,
   SiNumpy,
-  SiJupyter,
+ 
   SiDocker,
-  SiMongodb,
+ 
   SiScikitlearn,
   SiTableau,
 } from 'react-icons/si'
@@ -111,8 +111,6 @@ function About() {
                   <span className="skill-tag"><SiJavascript /> JavaScript</span>
                   <span className="skill-tag"><SiTypescript /> TypeScript</span>
                   <span className="skill-tag"><SiPostgresql /> SQL</span>
-                  <span className="skill-tag">C</span>
-                  <span className="skill-tag">Bash</span>
                 </div>
               </div>
 
@@ -123,7 +121,6 @@ function About() {
                   <span className="skill-tag"><SiReact /> React</span>
                   <span className="skill-tag"><SiAngular /> Angular</span>
                   <span className="skill-tag"><SiExpress /> Express</span>
-                  <span className="skill-tag"><SiMongodb /> MongoDB</span>
                   <span className="skill-tag"><SiPostgresql /> PostgreSQL</span>
               
                   <span className="skill-tag">REST APIs</span>
@@ -136,10 +133,9 @@ function About() {
                   <span className="skill-tag"><SiPandas /> Pandas</span>
                   <span className="skill-tag"><SiNumpy /> NumPy</span>
                   <span className="skill-tag"><SiScikitlearn /> Scikit-learn</span>
-                  <span className="skill-tag"><SiJupyter /> Jupyter</span>
                   <span className="skill-tag"><SiTableau /> Tableau</span>
                   <span className="skill-tag">Power BI</span>
-                  <span className="skill-tag">Matplotlib</span>
+                  
                 </div>
               </div>
 
@@ -147,10 +143,8 @@ function About() {
                 <h4>DevOps & Cloud</h4>
                 <div className="skill-tags">
                   <span className="skill-tag"><SiDocker /> Docker</span>
-                  <span className="skill-tag"><FaAws /> AWS</span>
                   <span className="skill-tag"><FaMicrosoft /> Azure</span>
                   <span className="skill-tag"><SiGithub /> GitHub Actions</span>
-                  <span className="skill-tag"><SiJira /> JIRA</span>
                   <span className="skill-tag">CI/CD</span>
                 </div>
               </div>

@@ -598,14 +598,17 @@ export default function ASCIIText({
     };
   }, [text, asciiFontSize, textFontSize, textColor, planeBaseHeight, enableWaves]);
 
-  // Pause when off-screen (scroll away from Hero)
+  // Pause when off-screen (scroll away from Hero) or tab is hidden
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
 
+    const isIntersectingRef = { current: true };
+
     const visibilityObserver = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
+        isIntersectingRef.current = entry.isIntersecting;
+        if (entry.isIntersecting && !document.hidden) {
           asciiRef.current?.resume();
         } else {
           asciiRef.current?.pause();
@@ -614,8 +617,21 @@ export default function ASCIIText({
       { threshold: 0 }
     );
 
+    const handleTabVisibility = () => {
+      if (document.hidden) {
+        asciiRef.current?.pause();
+      } else if (isIntersectingRef.current) {
+        asciiRef.current?.resume();
+      }
+    };
+
+    document.addEventListener('visibilitychange', handleTabVisibility);
     visibilityObserver.observe(container);
-    return () => visibilityObserver.disconnect();
+
+    return () => {
+      document.removeEventListener('visibilitychange', handleTabVisibility);
+      visibilityObserver.disconnect();
+    };
   }, []);
 
   return (

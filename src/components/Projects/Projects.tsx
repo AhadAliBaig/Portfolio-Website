@@ -44,7 +44,16 @@ function Projects() {
       tech: ['Python', 'Pandas', 'Matplotlib', 'Data Analysis'],
       impact: ['Data pipeline', 'Visualization', 'Pattern analysis'],
       github: 'https://github.com/AhadAliBaig/Energy-Demand-generation-and-weather',
-      image: '/images/image.png'
+      image: '/images/energy.png'
+    },
+    {
+      title: 'Blackjack',
+      description: 'Classic Blackjack game built with vanilla JavaScript. Players can hit, stand, and play new rounds. Focuses on core game logic, DOM manipulation, and clean frontend design.',
+      tech: ['JavaScript', 'HTML', 'CSS'],
+      impact: ['Fundamentals & logic design', 'DOM manipulation', 'Frontend on Netlify'],
+      period: 'Vanilla JS, no frameworks',
+      github: 'https://blackjackgame9.netlify.app/',
+      image: '/images/blackjack-screenshot.png'
     }
   ]
 

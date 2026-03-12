@@ -127,6 +127,7 @@ function Hero() {
           farPlane={isMobile ? 15 : 18}
           gamma={0.4545}
           variant="square"
+          isMobile={isMobile}
         />
       </div>
 

@@ -182,6 +182,7 @@ interface PixelSnowProps {
   density?: number;
   variant?: 'square' | 'round' | 'snowflake';
   direction?: number;
+  isMobile?: boolean;
   className?: string;
   style?: React.CSSProperties;
 }
@@ -199,12 +200,14 @@ export default function PixelSnow({
   density = 0.3,
   variant = 'square',
   direction = 125,
+  isMobile = false,
   className = '',
   style = {}
 }: PixelSnowProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const animationRef = useRef<number>(0);
   const isVisibleRef = useRef(true);
+  const isTabVisibleRef = useRef(true);
   const rendererRef = useRef<WebGLRenderer | null>(null);
   const materialRef = useRef<ShaderMaterial | null>(null);
   const resizeTimeoutRef = useRef<number | null>(null);
@@ -238,7 +241,7 @@ export default function PixelSnow({
     }, 100);
   }, []);
 
-  // Visibility observer
+  // Visibility observer (pause when scrolled out of view)
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
@@ -252,6 +255,15 @@ export default function PixelSnow({
 
     observer.observe(container);
     return () => observer.disconnect();
+  }, []);
+
+  // Pause when tab is hidden (saves GPU/CPU when user switches tabs)
+  useEffect(() => {
+    const handleVisibilityChange = () => {
+      isTabVisibleRef.current = !document.hidden;
+    };
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    return () => document.removeEventListener('visibilitychange', handleVisibilityChange);
   }, []);
 
   // Main Three.js setup - only runs once
@@ -270,7 +282,7 @@ export default function PixelSnow({
       depth: false
     });
 
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setPixelRatio(isMobile ? 1 : Math.min(window.devicePixelRatio, 2));
     renderer.setSize(container.offsetWidth, container.offsetHeight);
     renderer.setClearColor(0x000000, 0);
     container.appendChild(renderer.domElement);
@@ -310,8 +322,8 @@ export default function PixelSnow({
       animationRef.current = requestAnimationFrame(animate);
       frameCount++;
 
-      // Only render if visible, throttle to ~30fps for performance
-      if (isVisibleRef.current && frameCount % 2 === 0) {
+      // Only render if visible and tab is active, throttle to ~30fps for performance
+      if (isVisibleRef.current && isTabVisibleRef.current && frameCount % 2 === 0) {
         material.uniforms.uTime.value = (performance.now() - startTime) * 0.001;
         renderer.render(scene, camera);
       }
@@ -333,7 +345,7 @@ export default function PixelSnow({
       rendererRef.current = null;
       materialRef.current = null;
     };
-  }, [handleResize]); // Only recreate scene when handleResize changes
+  }, [handleResize]); // isMobile handled in separate effect to avoid full scene recreate
 
   // Update material uniforms when props change
   useEffect(() => {
