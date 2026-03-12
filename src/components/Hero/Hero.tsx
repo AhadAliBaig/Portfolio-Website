@@ -19,6 +19,12 @@ function Hero() {
 
   const heroCount = 2;
 
+  const typeTexts = useMemo(() => [
+    "Building backend systems & APIs",
+    "Transforming data into insights",
+    "Solving problems with clean code",
+  ], []);
+
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth <= 768);
@@ -152,11 +158,7 @@ function Hero() {
 
             <h1 className="hero-title">
               <TextType 
-                text={[
-                  "Building backend systems & APIs",
-                  "Transforming data into insights",
-                  "Solving problems with clean code",   
-                ]}
+                text={typeTexts}
                 as="span"
                 typingSpeed={100}
                 showCursor={true}
