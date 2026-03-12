@@ -3,7 +3,7 @@ import TextType from '../TextType';
 import PixelSnow from '../PixelSnow';
 import ScrollAnimation from '../ScrollAnimation';
 import ASCIIText from '../ASCIIText';
-import {useState, useEffect} from 'react';
+import {useState, useEffect, useMemo} from 'react';
 
 function Hero() {
   // Detect if device is mobile/tablet

@@ -305,11 +305,13 @@ export default function PixelSnow({
     window.addEventListener('resize', handleResize);
 
     const startTime = performance.now();
+    let frameCount = 0;
     const animate = () => {
       animationRef.current = requestAnimationFrame(animate);
+      frameCount++;
 
-      // Only render if visible
-      if (isVisibleRef.current) {
+      // Only render if visible, throttle to ~30fps for performance
+      if (isVisibleRef.current && frameCount % 2 === 0) {
         material.uniforms.uTime.value = (performance.now() - startTime) * 0.001;
         renderer.render(scene, camera);
       }

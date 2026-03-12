@@ -416,8 +416,19 @@ class CanvAscii {
     this.center = { x: w / 2, y: h / 2 };
   }
 
+  paused = false;
+  frameCount = 0;
+
   load() {
     this.animate();
+  }
+
+  pause() {
+    this.paused = true;
+  }
+
+  resume() {
+    this.paused = false;
   }
 
   onMouseMove(evt: MouseEvent | TouchEvent) {
@@ -431,7 +442,11 @@ class CanvAscii {
   animate() {
     const animateFrame = () => {
       this.animationFrameId = requestAnimationFrame(animateFrame);
-      this.render();
+      this.frameCount++;
+      // Throttle to ~30fps - only render every 2nd frame
+      if (!this.paused && this.frameCount % 2 === 0) {
+        this.render();
+      }
     };
     animateFrame();
   }
@@ -582,6 +597,26 @@ export default function ASCIIText({
       }
     };
   }, [text, asciiFontSize, textFontSize, textColor, planeBaseHeight, enableWaves]);
+
+  // Pause when off-screen (scroll away from Hero)
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const visibilityObserver = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          asciiRef.current?.resume();
+        } else {
+          asciiRef.current?.pause();
+        }
+      },
+      { threshold: 0 }
+    );
+
+    visibilityObserver.observe(container);
+    return () => visibilityObserver.disconnect();
+  }, []);
 
   return (
     <div
