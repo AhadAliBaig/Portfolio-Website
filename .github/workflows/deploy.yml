@@ -42,6 +42,7 @@ jobs:
         run: |
           ssh -i ~/.ssh/deploy_key ubuntu@40.233.107.165 << 'ENDSSH'
             sudo rm -rf /var/www/portfolio/assets
+            sudo rm -rf /var/www/portfolio/images
             sudo rm -f /var/www/portfolio/index.html
             sudo mv /tmp/portfolio/* /var/www/portfolio/ 2>/dev/null || true
             sudo chown -R www-data:www-data /var/www/portfolio
