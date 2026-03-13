@@ -44,7 +44,7 @@ function Projects() {
       tech: ['Python', 'Pandas', 'Matplotlib', 'Data Analysis'],
       impact: ['Data pipeline', 'Visualization', 'Pattern analysis'],
       github: 'https://github.com/AhadAliBaig/Energy-Demand-generation-and-weather',
-      image: '/images/energy.png'
+      image: '/images/Energy.png'
     },
     {
       title: 'Blackjack',
@@ -53,7 +53,7 @@ function Projects() {
       impact: ['Fundamentals & logic design', 'DOM manipulation', 'Frontend on Netlify'],
       period: 'Vanilla JS, no frameworks',
       github: 'https://blackjackgame9.netlify.app/',
-      image: '/images/blackjack-screenshot.png'
+      image: '/images/blackjack.png'
     }
   ]
 
