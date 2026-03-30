@@ -69,6 +69,26 @@ function About() {
         </div>
       </ScrollAnimation>
 
+      {/* Experience Highlights */}
+      <ScrollAnimation>
+        <div className="experience-highlights">
+          <div className="highlight-card">
+            <span className="highlight-year">2025</span>
+            <div className="highlight-info">
+              <h4>AI & Data Science Intern</h4>
+              <p>Aga Khan University</p>
+            </div>
+          </div>
+          <div className="highlight-card">
+            <span className="highlight-year">2025</span>
+            <div className="highlight-info">
+              <h4>Student Researcher — Robotics Lab</h4>
+              <p>UNBC</p>
+            </div>
+          </div>
+        </div>
+      </ScrollAnimation>
+
       {/* Tabs */}
       <ScrollAnimation>
         <div className='tabs'>

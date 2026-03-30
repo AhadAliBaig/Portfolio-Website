@@ -1,6 +1,7 @@
 import { lazy, Suspense } from 'react'
 import './App.css'
 import Header from './components/Header/Header'
+import ScrollProgress from './components/ScrollProgress/ScrollProgress'
 import Hero from './components/Hero/Hero'
 import Footer from './components/Footer/Footer'
 import BackToTop from './components/BackToTop/BackToTop'
@@ -13,6 +14,7 @@ const Contact = lazy(() => import('./components/Contact Me/Contact'))
 function App() {
   return (
     <div className="scroll-container">
+      <ScrollProgress />
       <Header />
       <Hero />
       <Suspense fallback={<section style={{ minHeight: '50vh' }} />}>

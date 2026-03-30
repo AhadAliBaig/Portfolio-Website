@@ -147,6 +147,69 @@
   margin-bottom: 1rem;
 }
 
+/* Experience Highlights (above tabs) */
+.experience-highlights {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.highlight-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  flex: 1;
+  min-width: 260px;
+  max-width: 400px;
+  transition: all 0.3s ease;
+}
+
+.highlight-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+.highlight-year {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
+  font-weight: 600;
+  white-space: nowrap;
+  padding: 0.3rem 0.6rem;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 6px;
+}
+
+.highlight-info h4 {
+  color: white;
+  font-size: 1.05rem;
+  margin: 0 0 0.2rem 0;
+  font-weight: 600;
+}
+
+.highlight-info p {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .experience-highlights {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .highlight-card {
+    max-width: 100%;
+  }
+}
+
 .tabs {
   display: flex;
   gap: 1rem;
