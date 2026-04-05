@@ -52,14 +52,14 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-obsidian-dark pt-16"
+      className="relative min-h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-obsidian-dark pt-20"
     >
       {/* Background Grid */}
       <div className="absolute inset-0 opacity-10 pointer-events-none" 
            style={{ backgroundImage: 'linear-gradient(#484848 1px, transparent 1px), linear-gradient(90deg, #484848 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
       
       <div className="z-10 max-w-4xl w-full px-6">
-        <div className="font-mono text-cyan-glow text-sm mb-4 opacity-70">
+        <div className="font-mono text-cyan-glow text-base mb-4 opacity-70">
           ~/portfolio $ whoami
         </div>
         
@@ -73,7 +73,7 @@ export default function Hero() {
           <span className="border-r-2 border-cyan-glow ml-1 animate-blink-caret" />
         </div>
 
-        <p className="font-body text-aluminum/70 max-w-2xl text-lg leading-relaxed mb-10">
+        <p className="font-body text-aluminum/70 max-w-2xl text-lg md:text-xl leading-relaxed mb-10">
           Fourth-year CS student at UNBC. I like building backends, working with data, and
           shipping dependable software—and I&apos;m open to internships or early-career roles
           in engineering, backends, or analytics.
@@ -82,14 +82,14 @@ export default function Hero() {
         <div className="flex flex-col md:flex-row gap-4">
           <a 
             href="#projects"
-            className="bg-aluminum text-obsidian-dark font-mono text-xs font-bold tracking-widest uppercase px-10 py-4 hover:bg-cyan-glow transition-all active:scale-95 text-center"
+            className="bg-aluminum text-obsidian-dark font-mono text-sm font-bold tracking-wider uppercase px-10 py-4 hover:bg-cyan-glow transition-all active:scale-95 text-center"
           >
             Audit Projects
           </a>
           <a 
             href="/Resume.pdf"
             target="_blank"
-            className="border border-outline-v/30 text-aluminum font-mono text-xs font-bold tracking-widest uppercase px-10 py-4 hover:border-cyan-glow hover:text-cyan-glow transition-all active:scale-95 text-center"
+            className="border border-outline-v/30 text-aluminum font-mono text-sm font-bold tracking-wider uppercase px-10 py-4 hover:border-cyan-glow hover:text-cyan-glow transition-all active:scale-95 text-center"
           >
             Request Resume
           </a>
@@ -98,11 +98,11 @@ export default function Hero() {
         <div className="mt-12 p-5 sm:p-6 bg-charcoal-low border border-outline-v/10 rounded-sm max-w-lg">
           <div className="flex items-center gap-2.5 mb-3">
             <div className="w-2.5 h-2.5 rounded-full bg-cyan-glow animate-pulse shrink-0" />
-            <span className="font-mono text-xs sm:text-sm uppercase tracking-wider text-cyan-glow">
+            <span className="font-mono text-sm sm:text-base uppercase tracking-wider text-cyan-glow">
               Infrastructure Status
             </span>
           </div>
-          <p className="font-mono text-sm sm:text-base text-aluminum/75 leading-relaxed">
+          <p className="font-mono text-base sm:text-lg text-aluminum/80 leading-relaxed">
             This site runs on my own Oracle Cloud server. I handle deployment, CI/CD, and infrastructure just like a production application.
           </p>
         </div>

@@ -21,7 +21,7 @@
 
 @layer base {
   body {
-    @apply bg-obsidian-dark text-aluminum font-sans selection:bg-cyan-glow selection:text-obsidian-dark;
+    @apply bg-obsidian-dark text-aluminum font-sans text-base antialiased selection:bg-cyan-glow selection:text-obsidian-dark;
   }
 }
 

@@ -60,7 +60,7 @@ export default function Navbar() {
       />
       <nav
         className={cn(
-          "fixed top-1 w-full h-12 flex items-center justify-between px-6 z-[90] transition-all duration-300 border-b",
+          "fixed top-1 w-full h-14 flex items-center justify-between px-6 z-[90] transition-all duration-300 border-b",
           isScrolled
             ? "bg-obsidian-dark/80 backdrop-blur-md border-outline-v/20"
             : "bg-transparent border-transparent",
@@ -71,16 +71,16 @@ export default function Navbar() {
           <img
             src="/images/Submark.png"
             alt="Ahad Baig"
-            className="h-8 w-auto max-w-[120px] object-contain"
+            className="h-9 w-auto max-w-[130px] object-contain"
           />
         </a>
 
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-9">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="font-mono text-[10px] uppercase tracking-widest text-aluminum/60 hover:text-cyan-glow transition-colors"
+              className="font-mono text-sm uppercase tracking-wider text-aluminum/70 hover:text-cyan-glow transition-colors"
             >
               {link.name}
             </a>
@@ -89,7 +89,7 @@ export default function Navbar() {
             href="/Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-aluminum text-obsidian-dark font-mono text-[10px] font-bold px-3 py-1 uppercase tracking-widest hover:bg-cyan-glow transition-colors"
+            className="bg-aluminum text-obsidian-dark font-mono text-sm font-bold px-4 py-2 uppercase tracking-wider hover:bg-cyan-glow transition-colors"
           >
             Resume
           </a>
@@ -119,7 +119,7 @@ export default function Navbar() {
             key={link.name}
             href={link.href}
             onClick={closeMenu}
-            className="font-mono text-xl uppercase tracking-widest text-aluminum hover:text-cyan-glow transition-colors"
+            className="font-mono text-2xl uppercase tracking-wide text-aluminum hover:text-cyan-glow transition-colors"
           >
             {link.name}
           </a>
@@ -129,7 +129,7 @@ export default function Navbar() {
           target="_blank"
           rel="noopener noreferrer"
           onClick={closeMenu}
-          className="bg-aluminum text-obsidian-dark font-mono text-xs font-bold px-8 py-3 uppercase tracking-widest hover:bg-cyan-glow transition-colors"
+          className="bg-aluminum text-obsidian-dark font-mono text-sm font-bold px-8 py-3 uppercase tracking-wider hover:bg-cyan-glow transition-colors"
         >
           Resume
         </a>

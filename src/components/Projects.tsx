@@ -12,7 +12,7 @@ export default function Projects() {
       <div className="max-w-7xl mx-auto">
         <div className="flex items-center gap-4 mb-12">
           <div className="w-1.5 h-1.5 rounded-full bg-cyan-glow shadow-[0_0_10px_#00e3fd]" />
-          <h2 className="font-mono text-sm uppercase tracking-[0.3em] text-aluminum">Projects</h2>
+          <h2 className="font-mono text-base uppercase tracking-[0.3em] text-aluminum">Projects</h2>
           <div className="flex-grow h-px bg-outline-v/20" />
         </div>
 
@@ -35,22 +35,22 @@ export default function Projects() {
               </div>
               
               <div className="flex-grow">
-                <h3 className="font-headline font-bold text-xl text-aluminum mb-2 group-hover:text-cyan-glow transition-colors">
+                <h3 className="font-headline font-bold text-xl md:text-2xl text-aluminum mb-2 group-hover:text-cyan-glow transition-colors">
                   {project.title}
                 </h3>
-                <p className="text-aluminum/50 text-xs line-clamp-2 mb-4">
+                <p className="text-aluminum/50 text-sm line-clamp-2 mb-4">
                   {project.description}
                 </p>
               </div>
 
               <div className="flex flex-wrap gap-2 mt-auto">
                 {project.techStack.slice(0, 3).map(tech => (
-                  <span key={tech} className="font-mono text-[8px] px-1.5 py-0.5 bg-charcoal border border-outline-v/10 text-aluminum/40 uppercase">
+                  <span key={tech} className="font-mono text-xs px-1.5 py-0.5 bg-charcoal border border-outline-v/10 text-aluminum/40 uppercase">
                     {tech}
                   </span>
                 ))}
                 {project.techStack.length > 3 && (
-                  <span className="font-mono text-[8px] px-1.5 py-0.5 text-aluminum/20 uppercase">
+                  <span className="font-mono text-xs px-1.5 py-0.5 text-aluminum/20 uppercase">
                     +{project.techStack.length - 3}
                   </span>
                 )}
@@ -60,10 +60,10 @@ export default function Projects() {
         </div>
 
         <div className="mt-12 text-center">
-          <p className="font-mono text-xs text-aluminum/30 mb-4">Want to talk about how I built these?</p>
+          <p className="font-mono text-sm text-aluminum/30 mb-4">Want to talk about how I built these?</p>
           <a 
             href="#contact"
-            className="inline-block font-mono text-xs text-cyan-glow border-b border-cyan-glow pb-1 hover:text-aluminum hover:border-aluminum transition-all"
+            className="inline-block font-mono text-sm text-cyan-glow border-b border-cyan-glow pb-1 hover:text-aluminum hover:border-aluminum transition-all"
           >
             Let's Connect
           </a>
@@ -103,24 +103,24 @@ export default function Projects() {
               </div>
 
               <div className="md:w-1/2 p-8 md:p-12 overflow-y-auto">
-                <div className="font-mono text-[10px] text-cyan-glow mb-2 uppercase tracking-widest">Project Details</div>
-                <h3 className="font-headline font-extrabold text-3xl text-aluminum mb-6 uppercase tracking-tight">
+                <div className="font-mono text-sm text-cyan-glow mb-2 uppercase tracking-wider">Project Details</div>
+                <h3 className="font-headline font-extrabold text-3xl md:text-4xl text-aluminum mb-6 uppercase tracking-tight">
                   {selectedProject.title}
                 </h3>
                 
                 <div className="space-y-6">
                   <div>
-                    <h4 className="font-mono text-[10px] text-aluminum/40 uppercase mb-2">Description</h4>
-                    <p className="text-aluminum/70 text-sm leading-relaxed">
+                    <h4 className="font-mono text-sm text-aluminum/40 uppercase tracking-wider mb-2">Description</h4>
+                    <p className="text-aluminum/70 text-base leading-relaxed">
                       {selectedProject.description}
                     </p>
                   </div>
 
                   <div>
-                    <h4 className="font-mono text-[10px] text-aluminum/40 uppercase mb-2">Impact & Results</h4>
+                    <h4 className="font-mono text-sm text-aluminum/40 uppercase tracking-wider mb-2">Impact & Results</h4>
                     <ul className="space-y-1">
                       {selectedProject.impactTags.map((tag, i) => (
-                        <li key={i} className="flex items-center gap-2 text-xs text-aluminum/60">
+                        <li key={i} className="flex items-center gap-2 text-sm text-aluminum/60">
                           <div className="w-1 h-1 bg-cyan-glow rounded-full" />
                           {tag}
                         </li>
@@ -129,10 +129,10 @@ export default function Projects() {
                   </div>
 
                   <div>
-                    <h4 className="font-mono text-[10px] text-aluminum/40 uppercase mb-2">Tech Stack</h4>
+                    <h4 className="font-mono text-sm text-aluminum/40 uppercase tracking-wider mb-2">Tech Stack</h4>
                     <div className="flex flex-wrap gap-2">
                       {selectedProject.techStack.map(tech => (
-                        <span key={tech} className="font-mono text-[9px] px-2 py-1 bg-charcoal border border-outline-v/10 text-aluminum/60 uppercase">
+                        <span key={tech} className="font-mono text-xs px-2 py-1 bg-charcoal border border-outline-v/10 text-aluminum/60 uppercase">
                           {tech}
                         </span>
                       ))}
@@ -143,7 +143,7 @@ export default function Projects() {
                     <a 
                       href={selectedProject.link}
                       target="_blank"
-                      className="flex-1 flex items-center justify-center gap-2 bg-aluminum text-obsidian-dark font-mono text-[10px] font-bold py-3 uppercase tracking-widest hover:bg-cyan-glow transition-colors"
+                      className="flex-1 flex items-center justify-center gap-2 bg-aluminum text-obsidian-dark font-mono text-sm font-bold py-3 uppercase tracking-wider hover:bg-cyan-glow transition-colors"
                     >
                       View Live <ExternalLink className="w-3 h-3" />
                     </a>

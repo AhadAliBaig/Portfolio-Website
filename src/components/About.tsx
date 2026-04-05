@@ -17,15 +17,15 @@ export default function About() {
     <section id="about" className="py-16 md:py-20 px-6 max-w-7xl mx-auto">
       <div className="flex items-center gap-4 mb-12">
         <div className="w-1.5 h-1.5 rounded-full bg-cyan-glow shadow-[0_0_10px_#00e3fd]" />
-        <h2 className="font-mono text-sm uppercase tracking-[0.3em] text-aluminum">About Me</h2>
+        <h2 className="font-mono text-base uppercase tracking-[0.3em] text-aluminum">About Me</h2>
         <div className="flex-grow h-px bg-outline-v/20" />
       </div>
 
       {/* Bento Grid */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-12">
         <div className="md:col-span-2 md:row-span-2 bento-card flex flex-col justify-center">
-          <h3 className="font-headline font-bold text-3xl tracking-tight text-aluminum mb-4 uppercase">Hey, I'm Ahad</h3>
-          <p className="text-aluminum/70 leading-relaxed">
+          <h3 className="font-headline font-bold text-3xl md:text-4xl tracking-tight text-aluminum mb-4 uppercase">Hey, I'm Ahad</h3>
+          <p className="text-aluminum/70 text-base md:text-lg leading-relaxed">
             CS student at UNBC focused on backend development, data analysis, and DevOps. 
             I enjoy building APIs, working with data pipelines, and deploying applications to the cloud.
           </p>
@@ -33,21 +33,21 @@ export default function About() {
 
         <div className="bento-card flex flex-col items-center justify-center text-center">
           <GraduationCap className="w-6 h-6 text-cyan-glow mb-2" />
-          <div className="font-mono text-[10px] uppercase tracking-widest text-aluminum/40">UNBC</div>
-          <div className="font-bold text-xs text-aluminum">B.Sc. Computer Science</div>
+          <div className="font-mono text-sm uppercase tracking-wider text-aluminum/40">UNBC</div>
+          <div className="font-bold text-sm text-aluminum">B.Sc. Computer Science</div>
         </div>
 
         <div className="bento-card flex flex-col items-center justify-center text-center">
           <MapPin className="w-6 h-6 text-cyan-glow mb-2" />
-          <div className="font-mono text-[10px] uppercase tracking-widest text-aluminum/40">Canada</div>
-          <div className="font-bold text-xs text-aluminum">Prince George, BC</div>
+          <div className="font-mono text-sm uppercase tracking-wider text-aluminum/40">Canada</div>
+          <div className="font-bold text-sm text-aluminum">Prince George, BC</div>
         </div>
 
         <div className="md:col-span-2 bento-card">
-          <div className="font-mono text-[10px] uppercase tracking-widest text-aluminum/40 mb-4">Tech Stack</div>
+          <div className="font-mono text-sm uppercase tracking-wider text-aluminum/40 mb-4">Tech Stack</div>
           <div className="flex flex-wrap gap-3">
             {["Python", "JavaScript", "TypeScript", "Node.js", "React", "PostgreSQL", "Docker", "AWS"].map((tech) => (
-              <span key={tech} className="font-mono text-[10px] px-2 py-1 bg-charcoal border border-outline-v/20 text-aluminum/60 uppercase">
+              <span key={tech} className="font-mono text-sm px-2 py-1 bg-charcoal border border-outline-v/20 text-aluminum/60 uppercase">
                 {tech}
               </span>
             ))}
@@ -64,7 +64,7 @@ export default function About() {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`flex-1 flex items-center justify-center gap-2 py-4 font-mono text-[10px] uppercase tracking-widest transition-all ${
+              className={`flex-1 flex items-center justify-center gap-2 py-4 font-mono text-sm uppercase tracking-wider transition-all ${
                 activeTab === tab.id 
                 ? "text-cyan-glow bg-charcoal border-b-2 border-cyan-glow" 
                 : "text-aluminum/40 hover:text-aluminum hover:bg-charcoal/50"
@@ -87,25 +87,25 @@ export default function About() {
                 className="grid grid-cols-1 md:grid-cols-2 gap-8"
               >
                 <div>
-                  <h4 className="font-mono text-xs uppercase tracking-widest text-cyan-glow mb-4">Languages</h4>
+                  <h4 className="font-mono text-sm uppercase tracking-widest text-cyan-glow mb-4">Languages</h4>
                   <div className="flex flex-wrap gap-2">
                     {["Python", "Java", "JavaScript", "TypeScript", "SQL"].map(s => <SkillBadge key={s} name={s} />)}
                   </div>
                 </div>
                 <div>
-                  <h4 className="font-mono text-xs uppercase tracking-widest text-cyan-glow mb-4">Backend & Web</h4>
+                  <h4 className="font-mono text-sm uppercase tracking-widest text-cyan-glow mb-4">Backend & Web</h4>
                   <div className="flex flex-wrap gap-2">
                     {["Node.js", "React", "Angular", "Express", "PostgreSQL", "REST APIs"].map(s => <SkillBadge key={s} name={s} />)}
                   </div>
                 </div>
                 <div>
-                  <h4 className="font-mono text-xs uppercase tracking-widest text-cyan-glow mb-4">Data & ML</h4>
+                  <h4 className="font-mono text-sm uppercase tracking-widest text-cyan-glow mb-4">Data & ML</h4>
                   <div className="flex flex-wrap gap-2">
                     {["Pandas", "NumPy", "Scikit-learn", "Tableau", "Power BI"].map(s => <SkillBadge key={s} name={s} />)}
                   </div>
                 </div>
                 <div>
-                  <h4 className="font-mono text-xs uppercase tracking-widest text-cyan-glow mb-4">DevOps & Cloud</h4>
+                  <h4 className="font-mono text-sm uppercase tracking-widest text-cyan-glow mb-4">DevOps & Cloud</h4>
                   <div className="flex flex-wrap gap-2">
                     {["Docker", "Azure", "GitHub Actions", "CI/CD"].map(s => <SkillBadge key={s} name={s} />)}
                   </div>
@@ -128,9 +128,9 @@ export default function About() {
                       <div className="flex-grow w-px bg-outline-v/20 my-2" />
                     </div>
                     <div className="pb-6">
-                      <div className="font-mono text-[10px] text-cyan-glow mb-1">{exp.year} | {exp.location}</div>
+                      <div className="font-mono text-sm text-cyan-glow mb-1">{exp.year} | {exp.location}</div>
                       <div className="font-bold text-aluminum text-lg">{exp.role}</div>
-                      <div className="font-mono text-xs text-aluminum/40">{exp.company}</div>
+                      <div className="font-mono text-sm text-aluminum/40">{exp.company}</div>
                     </div>
                   </div>
                 ))}
@@ -146,24 +146,24 @@ export default function About() {
                 className="space-y-8"
               >
                 <div>
-                  <div className="font-mono text-[10px] text-cyan-glow mb-1">{EDUCATION.period} | {EDUCATION.location}</div>
+                  <div className="font-mono text-sm text-cyan-glow mb-1">{EDUCATION.period} | {EDUCATION.location}</div>
                   <div className="font-bold text-aluminum text-xl mb-1">{EDUCATION.institution}</div>
                   <div className="text-aluminum/70 mb-4">{EDUCATION.degree}</div>
                   <div className="flex flex-wrap gap-2">
                     {EDUCATION.courses.map(c => (
-                      <span key={c} className="text-[10px] text-aluminum/40 border border-outline-v/10 px-2 py-0.5 rounded-full">{c}</span>
+                      <span key={c} className="text-sm text-aluminum/40 border border-outline-v/10 px-2 py-0.5 rounded-full">{c}</span>
                     ))}
                   </div>
                 </div>
                 <div className="space-y-4">
-                  <h4 className="font-mono text-xs uppercase tracking-widest text-cyan-glow">Awards</h4>
+                  <h4 className="font-mono text-sm uppercase tracking-widest text-cyan-glow">Awards</h4>
                   {EDUCATION.awards.map((a, i) => (
                     <div key={i} className="p-4 bg-charcoal border border-outline-v/10 rounded-sm">
                       <div className="flex justify-between items-start mb-1">
                         <div className="font-bold text-aluminum">{a.title}</div>
-                        <div className="font-mono text-[10px] text-cyan-glow">{a.date}</div>
+                        <div className="font-mono text-sm text-cyan-glow">{a.date}</div>
                       </div>
-                      <div className="text-xs text-aluminum/50">{a.description}</div>
+                      <div className="text-sm text-aluminum/50">{a.description}</div>
                     </div>
                   ))}
                 </div>
@@ -195,7 +195,7 @@ export default function About() {
                 <a 
                   href="https://github.com/AhadAliBaig"
                   target="_blank"
-                  className="flex items-center gap-2 font-mono text-xs text-cyan-glow hover:underline"
+                  className="flex items-center gap-2 font-mono text-sm text-cyan-glow hover:underline"
                 >
                   View Full Profile <Github className="w-4 h-4" />
                 </a>
@@ -210,7 +210,7 @@ export default function About() {
 
 function SkillBadge({ name }: { name: string }) {
   return (
-    <span className="font-mono text-[10px] px-3 py-1.5 bg-charcoal border border-outline-v/20 text-aluminum hover:border-cyan-glow hover:text-cyan-glow transition-colors uppercase">
+    <span className="font-mono text-sm px-3 py-1.5 bg-charcoal border border-outline-v/20 text-aluminum hover:border-cyan-glow hover:text-cyan-glow transition-colors uppercase">
       {name}
     </span>
   );

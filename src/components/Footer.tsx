@@ -8,12 +8,12 @@ export default function Footer() {
           <img
             src="/images/Submark.png"
             alt="Ahad Baig"
-            className="h-7 w-auto max-w-[100px] object-contain opacity-90"
+            className="h-8 w-auto max-w-[110px] object-contain opacity-90"
           />
-          <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-neutral-600">
+          <p className="font-mono text-xs uppercase tracking-[0.2em] text-neutral-600">
             © {new Date().getFullYear()} Ahad Baig. All rights reserved.
           </p>
-          <div className="flex items-center gap-2 font-mono text-[9px] uppercase tracking-widest text-neutral-700">
+          <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-neutral-700">
             Built with React + TypeScript
           </div>
         </div>
@@ -23,7 +23,7 @@ export default function Footer() {
             href="https://github.com/AhadAliBaig"
             target="_blank"
             rel="noopener noreferrer"
-            className="font-mono text-[9px] uppercase tracking-[0.2em] text-neutral-600 hover:text-cyan-glow transition-colors flex items-center gap-2"
+            className="font-mono text-xs uppercase tracking-[0.2em] text-neutral-600 hover:text-cyan-glow transition-colors flex items-center gap-2"
           >
             <Github className="w-3 h-3" /> GitHub
           </a>
@@ -31,13 +31,13 @@ export default function Footer() {
             href="https://www.linkedin.com/in/ahadalibaig/"
             target="_blank"
             rel="noopener noreferrer"
-            className="font-mono text-[9px] uppercase tracking-[0.2em] text-neutral-600 hover:text-cyan-glow transition-colors flex items-center gap-2"
+            className="font-mono text-xs uppercase tracking-[0.2em] text-neutral-600 hover:text-cyan-glow transition-colors flex items-center gap-2"
           >
             <Linkedin className="w-3 h-3" /> LinkedIn
           </a>
           <div className="flex items-center gap-2">
             <div className="w-1.5 h-1.5 rounded-full bg-cyan-glow animate-pulse" />
-            <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-cyan-400">
+            <span className="font-mono text-xs uppercase tracking-[0.2em] text-cyan-400">
               System Status: Online
             </span>
           </div>
