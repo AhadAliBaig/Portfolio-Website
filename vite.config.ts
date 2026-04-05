@@ -11,15 +11,14 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
-build: {
-  rollupOptions: {
-    output: {
-      manualChunks: {
-        'three': ['three'],  // Separate Three.js bundle
-        'vendor': ['react', 'react-dom'],  // Separate React bundle
-      }
-    }
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+        },
+      },
+    },
+    chunkSizeWarningLimit: 1000,
   },
-  chunkSizeWarningLimit: 1000,
-},
 })

@@ -22,9 +22,7 @@ Thumbs.db
 
 guide/
 *.sh
-thingstodo.txt
 
-# Dummy folder for UI/UX testing
-dummy/
-deploy.sh
-TODO.md
+# Archived / unused (old UI export, v1 source, scratch files — not used by the app)
+dummy/*
+!dummy/README.txt
