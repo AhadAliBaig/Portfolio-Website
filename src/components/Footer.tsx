@@ -1,4 +1,4 @@
-import { Github, Linkedin } from "lucide-react";
+import { Activity, Github, Linkedin } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -35,12 +35,15 @@ export default function Footer() {
           >
             <Linkedin className="w-3 h-3" /> LinkedIn
           </a>
-          <div className="flex items-center gap-2">
-            <div className="w-1.5 h-1.5 rounded-full bg-cyan-glow animate-pulse" />
-            <span className="font-mono text-xs uppercase tracking-[0.2em] text-cyan-400">
-              System Status: Online
-            </span>
-          </div>
+          <a
+            href="https://stats.uptimerobot.com/jBqpMwt8qI/802770866"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.2em] text-cyan-400 hover:text-cyan-glow transition-colors"
+          >
+            <Activity className="w-3 h-3" />
+            Live status
+          </a>
         </div>
       </div>
     </footer>

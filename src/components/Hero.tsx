@@ -102,9 +102,18 @@ export default function Hero() {
               Infrastructure Status
             </span>
           </div>
-          <p className="font-mono text-base sm:text-lg text-aluminum/80 leading-relaxed">
+          <p className="font-mono text-base sm:text-lg text-aluminum/80 leading-relaxed mb-4">
             This site runs on my own Oracle Cloud server. I handle deployment, CI/CD, and infrastructure just like a production application.
           </p>
+          <a
+            href="https://stats.uptimerobot.com/jBqpMwt8qI/802770866"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 font-mono text-sm text-cyan-glow hover:text-aluminum border-b border-cyan-glow/50 hover:border-aluminum pb-0.5 transition-colors"
+          >
+            External uptime &amp; response metrics (UptimeRobot)
+            <span aria-hidden>↗</span>
+          </a>
         </div>
       </div>
 
