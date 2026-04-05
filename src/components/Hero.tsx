@@ -75,7 +75,7 @@ export default function Hero() {
 
         <p className="font-body text-aluminum/70 max-w-2xl text-lg md:text-xl leading-relaxed mb-10">
           Fourth-year CS student at UNBC. I like building backends, working with data, and
-          shipping dependable software—and I&apos;m open to internships or early-career roles
+          shipping dependable software and I&apos;m open to internships or early-career roles
           in engineering, backends, or analytics.
         </p>
 
