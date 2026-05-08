@@ -54,6 +54,15 @@ export const PROJECTS: Project[] = [
     impactTags: ["Fundamentals & logic design", "DOM manipulation", "Frontend on Netlify"],
     link: "https://blackjackgame9.netlify.app",
     image: "/images/blackjack.png"
+  },
+  {
+    id: 7,
+    title: "Online Retail Inventory Dashboard",
+    description: "Analyzed 500K rows of online retail data and built an interactive Tableau dashboard to track KPIs, financial analysis, product performance, and customer segmentation.",
+    techStack: ["Tableau", "Data Analysis", "KPI Dashboard", "Customer Segmentation"],
+    impactTags: ["500K rows analyzed", "Interactive Tableau Story", "Business-focused insights"],
+    link: "https://public.tableau.com/app/profile/ahad.baig/viz/3_5_a_new_story_solution_17755215386740/InventoryAnalysis",
+    image: "/images/tableau.png"
   }
 ];
 
