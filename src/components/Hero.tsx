@@ -18,7 +18,7 @@ export default function Hero() {
   const taglines = useMemo(
     () => [
       "Building backend systems & APIs",
-      "Transforming data into insights",
+      "Building RAG systems for real workflows",
       "Solving problems with clean code",
     ],
     []
@@ -74,9 +74,9 @@ export default function Hero() {
         </div>
 
         <p className="font-body text-aluminum/70 max-w-2xl text-lg md:text-xl leading-relaxed mb-10">
-          Fourth-year CS student at UNBC. I like building backends, working with data, and
-          shipping dependable software and I&apos;m open to internships or early-career roles
-          in engineering, backends, or analytics.
+          AI &amp; IT Intern at Clifton Engineering and a final-year Computer Science student at UNBC.
+          I help teams integrate AI into daily workflows by organizing data, prototyping RAG solutions,
+          and building Power BI dashboards that make project information easier to find and reuse.
         </p>
 
         <div className="flex flex-col md:flex-row gap-4">

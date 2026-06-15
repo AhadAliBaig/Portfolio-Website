@@ -68,10 +68,10 @@ export const PROJECTS: Project[] = [
 
 export const EXPERIENCES: Experience[] = [
   {
-    year: "2025",
-    location: "Hybrid",
-    role: "AI & Data Science Intern",
-    company: "Aga Khan University"
+    year: "2026",
+    location: "Calgary, AB",
+    role: "AI & IT Intern (Eng03)",
+    company: "Clifton Engineering Group"
   },
   {
     year: "2025",

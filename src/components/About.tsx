@@ -26,8 +26,9 @@ export default function About() {
         <div className="md:col-span-2 md:row-span-2 bento-card flex flex-col justify-center">
           <h3 className="font-headline font-bold text-3xl md:text-4xl tracking-tight text-aluminum mb-4 uppercase">Hey, I'm Ahad</h3>
           <p className="text-aluminum/70 text-base md:text-lg leading-relaxed">
-            CS student at UNBC focused on backend development, data analysis, and DevOps. 
-            I enjoy building APIs, working with data pipelines, and deploying applications to the cloud.
+            CS student at UNBC and AI &amp; IT Intern at Clifton Engineering, focused on backend development,
+            data analysis, and practical AI adoption. I work on workflow automation, document intelligence,
+            RAG solutions, and reporting dashboards that support engineering and operations teams.
           </p>
         </div>
 
